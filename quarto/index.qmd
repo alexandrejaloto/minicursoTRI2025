@@ -1,0 +1,20 @@
+# Introdução
+
+O minicurso Teoria de Resposta ao Item com aplicação no R ocorreu no dia 21/10/2025. Este livro disponibiliza o material do minicurso, ministrado por Alexandre Jaloto.
+
+Para rodar os comandos você precisa carregar os pacotes usados
+
+```{r}
+library(mirt)
+```
+
+```{r, eval=FALSE}
+# caso ainda não tenha instalado o pacote do minicurso
+devtools::install_github('alexandrejaloto/minicursoTRI2025)
+
+# após instalar o pacote do minicurso
+library(minicursoTRI2025)
+```
+
+Vamos trocar ideias sobre TRI e outros temas da área de medidas em educação?
+Contato: alexandre.jaloto@inep.gov.br

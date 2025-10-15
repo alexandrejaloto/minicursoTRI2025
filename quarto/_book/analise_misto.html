@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Análise com itens dicotômicos e politômicos – Minicurso TRI 2025</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./fipc.html" rel="next">
+<link href="./analise_graded.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./analise_misto.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Análise com itens dicotômicos e politômicos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Minicurso TRI 2025</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analise_2pl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análise de itens dicotômicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analise_graded.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Análise de itens politômicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./analise_misto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Análise com itens dicotômicos e politômicos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fipc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Calibração com parâmetros de itens fixos</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#preparação" id="toc-preparação" class="nav-link active" data-scroll-target="#preparação"><span class="header-section-number">4.1</span> Preparação</a></li>
+  <li><a href="#calibração" id="toc-calibração" class="nav-link" data-scroll-target="#calibração"><span class="header-section-number">4.2</span> Calibração</a>
+  <ul class="collapse">
+  <li><a href="#calibração-inicial-v0" id="toc-calibração-inicial-v0" class="nav-link" data-scroll-target="#calibração-inicial-v0"><span class="header-section-number">4.2.1</span> Calibração inicial (V0)</a></li>
+  <li><a href="#análise-dos-parâmetros-dos-itens-v1" id="toc-análise-dos-parâmetros-dos-itens-v1" class="nav-link" data-scroll-target="#análise-dos-parâmetros-dos-itens-v1"><span class="header-section-number">4.2.2</span> Análise dos parâmetros dos itens (V1)</a></li>
+  <li><a href="#verificar-ajuste-v2" id="toc-verificar-ajuste-v2" class="nav-link" data-scroll-target="#verificar-ajuste-v2"><span class="header-section-number">4.2.3</span> Verificar ajuste (V2)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Análise com itens dicotômicos e politômicos</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="preparação" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparação"><span class="header-section-number">4.1</span> Preparação</h2>
+<p>Importar banco</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"banco.misto"</span>, <span class="at">package =</span> <span class="st">'minicursoTRI2025'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nome das variáveis do banco</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(banco.misto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "IME_2801" "IME_6196" "IME_6042" "IME_2416" "IME_5228" "IME_2228"
+ [7] "IME_2647" "IME_1742" "IME_1437" "IME_5369" "IME_6881" "IME_6411"
+[13] "IME_9707" "IME_2376" "IME_2405" "IME_3939" "IME_1554" "IME_4568"
+[19] "IME_2727" "IME_4274" "IME_3586" "IME_6972" "IME_9082" "IME_9631"
+[25] "IME_6436" "IME_5479" "IME_6958" "IME_2786" "IME_8580" "IME_7417"
+[31] "IME_9843" "IME_4882" "IME_4071" "IME_4005" "IME_9948" "IME_7131"
+[37] "IME_9079" "IME_8825" "IME_5113" "IME_5104" "IME_8184" "IME_2565"
+[43] "IME_6445" "IME_3341" "IME_8694" "IME_1433" "IME_3127" "IME_8340"
+[49] "IME_9914" "IME_6379" "IRC_7671" "IRC_5373" "IRC_6255" "IRC_9192"
+[55] "IRC_8276" "IRC_7024" "IRC_3451" "IRC_4181" "IRC_7970" "IRC_2335"</code></pre>
+</div>
+</div>
+<p>São 60 itens, sendo 50 Itens de Múltipla Escolha (IME) e 10 Itens de Resposta Construída (IRC).</p>
+</section>
+<section id="calibração" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="calibração"><span class="header-section-number">4.2</span> Calibração</h2>
+<section id="calibração-inicial-v0" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="calibração-inicial-v0"><span class="header-section-number">4.2.1</span> Calibração inicial (V0)</h3>
+<p>Gerar a tabela inicial de parâmetros</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tab.pars <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> <span class="st">'values'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Configurar as prioris, considerando que os IMEs possuem cinco categorias de resposta.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'value'</span>] <span class="ot">&lt;-</span> <span class="fl">1.7</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'prior_1'</span>] <span class="ot">&lt;-</span> <span class="fl">0.53062825106217</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'prior_2'</span>] <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'prior.type'</span>] <span class="ot">&lt;-</span> <span class="st">'lnorm'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'lbound'</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'ubound'</span>] <span class="ot">&lt;-</span> <span class="cn">Inf</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'value'</span>] <span class="ot">&lt;-</span> .<span class="dv">2</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior_1'</span>] <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior_2'</span>] <span class="ot">&lt;-</span> <span class="dv">17</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior.type'</span>] <span class="ot">&lt;-</span> <span class="st">'expbeta'</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'lbound'</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'ubound'</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Calibrar os itens</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> tab.pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="gráficos" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="gráficos"><span class="header-section-number">4.2.1.1</span> Gráficos</h4>
+<p>Curva de informação do teste</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'info'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Confiabilidade do teste em função do escore</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'rxx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Erro padrão de medida em função do escore</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'SE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Informação do teste e erro padrão</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'infoSE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Curva de informação de cada item</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'infotrace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Curva característica de cada item</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'trace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Gráficos de cada item</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemplot</span>(fit, <span class="dv">1</span>, <span class="st">'info'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemplot</span>(fit, <span class="dv">1</span>, <span class="st">'SE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemplot</span>(fit, <span class="dv">1</span>, <span class="st">'trace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemplot</span>(fit, <span class="dv">1</span>, <span class="st">'infoSE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-13-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">itemplot</span>(fit, <span class="dv">1</span>, <span class="st">'infotrace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-13-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="análise-dos-parâmetros-dos-itens-v1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="análise-dos-parâmetros-dos-itens-v1"><span class="header-section-number">4.2.2</span> Análise dos parâmetros dos itens (V1)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$items
+             a      b     g  u     b1     b2    b3
+IME_2801 0.933  0.843 0.274  1     NA     NA    NA
+IME_6196 1.397  0.436 0.188  1     NA     NA    NA
+IME_6042 1.820  0.136 0.388  1     NA     NA    NA
+IME_2416 0.813 -1.494 0.208  1     NA     NA    NA
+IME_5228 2.067 -0.616 0.163  1     NA     NA    NA
+IME_2228 0.977  0.339 0.322  1     NA     NA    NA
+IME_2647 2.743  0.393 0.156  1     NA     NA    NA
+IME_1742 2.291 -0.732 0.214  1     NA     NA    NA
+IME_1437 2.768  0.142 0.385  1     NA     NA    NA
+IME_5369 1.956  1.441 0.289  1     NA     NA    NA
+IME_6881 1.143 -0.544 0.214  1     NA     NA    NA
+IME_6411 2.392 -1.729 0.198  1     NA     NA    NA
+IME_9707 0.448 -1.435 0.207  1     NA     NA    NA
+IME_2376 0.497 -0.987 0.205  1     NA     NA    NA
+IME_2405 2.099 -0.844 0.219  1     NA     NA    NA
+IME_3939 0.738 -0.689 0.209  1     NA     NA    NA
+IME_1554 0.570  0.607 0.202  1     NA     NA    NA
+IME_4568 0.939 -0.847 0.220  1     NA     NA    NA
+IME_2727 1.844 -0.195 0.316  1     NA     NA    NA
+IME_4274 2.930 -0.262 0.133  1     NA     NA    NA
+IME_3586 0.969  0.525 0.181  1     NA     NA    NA
+IME_6972 0.364 -2.185 0.205  1     NA     NA    NA
+IME_9082 1.723 -1.466 0.229  1     NA     NA    NA
+IME_9631 2.304  1.771 0.380  1     NA     NA    NA
+IME_6436 1.870  0.926 0.453  1     NA     NA    NA
+IME_5479 1.428 -0.821 0.235  1     NA     NA    NA
+IME_6958 2.457 -1.666 0.210  1     NA     NA    NA
+IME_2786 1.863 -3.289 0.201  1     NA     NA    NA
+IME_8580 0.746  0.414 0.201  1     NA     NA    NA
+IME_7417 1.158  0.222 0.217  1     NA     NA    NA
+IME_9843 2.846  0.314 0.195  1     NA     NA    NA
+IME_4882 2.074  0.130 0.218  1     NA     NA    NA
+IME_4071 0.891 -0.369 0.207  1     NA     NA    NA
+IME_4005 3.055  0.977 0.392  1     NA     NA    NA
+IME_9948 0.640  0.453 0.198  1     NA     NA    NA
+IME_7131 2.385  0.695 0.139  1     NA     NA    NA
+IME_9079 1.712 -0.066 0.207  1     NA     NA    NA
+IME_8825 0.509  0.128 0.206  1     NA     NA    NA
+IME_5113 2.361  0.294 0.147  1     NA     NA    NA
+IME_5104 0.421 -0.803 0.207  1     NA     NA    NA
+IME_8184 2.450  0.238 0.302  1     NA     NA    NA
+IME_2565 1.877  0.711 0.428  1     NA     NA    NA
+IME_6445 2.112 -1.463 0.213  1     NA     NA    NA
+IME_3341 1.413 -1.826 0.194  1     NA     NA    NA
+IME_8694 0.745  0.041 0.217  1     NA     NA    NA
+IME_1433 2.242 -0.534 0.279  1     NA     NA    NA
+IME_3127 2.751 -1.741 0.191  1     NA     NA    NA
+IME_8340 0.396  0.594 0.210  1     NA     NA    NA
+IME_9914 0.640 -1.350 0.202  1     NA     NA    NA
+IME_6379 1.274  0.787 0.170  1     NA     NA    NA
+IRC_7671 2.413     NA    NA NA -0.704 -0.349 0.578
+IRC_5373 1.754     NA    NA NA  0.478  0.692 1.258
+IRC_6255 1.705     NA    NA NA  1.484  2.516 2.634
+IRC_9192 1.629     NA    NA NA  0.450  1.255 1.378
+IRC_8276 2.404     NA    NA NA  0.617  1.299 1.404
+IRC_7024 1.207     NA    NA NA -0.582  0.030 0.448
+IRC_3451 0.547     NA    NA NA  0.617  0.833 1.395
+IRC_4181 1.707     NA    NA NA -0.343  0.534 1.152
+IRC_7970 1.586     NA    NA NA -0.520 -0.163 0.695
+IRC_2335 1.536     NA    NA NA  0.019  0.239 0.463
+
+$means
+F1 
+ 0 
+
+$cov
+   F1
+F1  1</code></pre>
+</div>
+</div>
+<p>Armazenar os parâmetros em um objeto</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pars <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">coef</span>(fit, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 a          b         g  u          b1          b2        b3
+IME_2801 0.9333110  0.8431687 0.2738618  1          NA          NA        NA
+IME_6196 1.3966245  0.4358323 0.1884184  1          NA          NA        NA
+IME_6042 1.8200476  0.1364890 0.3878231  1          NA          NA        NA
+IME_2416 0.8134274 -1.4936104 0.2084080  1          NA          NA        NA
+IME_5228 2.0673337 -0.6155756 0.1633001  1          NA          NA        NA
+IME_2228 0.9768479  0.3393796 0.3218452  1          NA          NA        NA
+IME_2647 2.7425083  0.3934639 0.1562361  1          NA          NA        NA
+IME_1742 2.2912997 -0.7315294 0.2137012  1          NA          NA        NA
+IME_1437 2.7681658  0.1419022 0.3850390  1          NA          NA        NA
+IME_5369 1.9558039  1.4412107 0.2885158  1          NA          NA        NA
+IME_6881 1.1431800 -0.5441748 0.2137776  1          NA          NA        NA
+IME_6411 2.3918856 -1.7288065 0.1977068  1          NA          NA        NA
+IME_9707 0.4482291 -1.4346212 0.2071189  1          NA          NA        NA
+IME_2376 0.4968861 -0.9873322 0.2052859  1          NA          NA        NA
+IME_2405 2.0985709 -0.8437899 0.2188553  1          NA          NA        NA
+IME_3939 0.7375823 -0.6886315 0.2094584  1          NA          NA        NA
+IME_1554 0.5702567  0.6070965 0.2024641  1          NA          NA        NA
+IME_4568 0.9385829 -0.8467838 0.2202114  1          NA          NA        NA
+IME_2727 1.8439372 -0.1951071 0.3157657  1          NA          NA        NA
+IME_4274 2.9301757 -0.2619318 0.1329982  1          NA          NA        NA
+IME_3586 0.9688490  0.5254432 0.1807632  1          NA          NA        NA
+IME_6972 0.3644981 -2.1852185 0.2045954  1          NA          NA        NA
+IME_9082 1.7232423 -1.4659150 0.2293080  1          NA          NA        NA
+IME_9631 2.3036937  1.7711546 0.3796293  1          NA          NA        NA
+IME_6436 1.8698224  0.9263637 0.4527068  1          NA          NA        NA
+IME_5479 1.4281737 -0.8209602 0.2349581  1          NA          NA        NA
+IME_6958 2.4565891 -1.6664214 0.2098317  1          NA          NA        NA
+IME_2786 1.8631112 -3.2887529 0.2007891  1          NA          NA        NA
+IME_8580 0.7461847  0.4142135 0.2013160  1          NA          NA        NA
+IME_7417 1.1576260  0.2220573 0.2173599  1          NA          NA        NA
+IME_9843 2.8457278  0.3144728 0.1953545  1          NA          NA        NA
+IME_4882 2.0739191  0.1301044 0.2184821  1          NA          NA        NA
+IME_4071 0.8914844 -0.3688656 0.2066603  1          NA          NA        NA
+IME_4005 3.0547332  0.9767776 0.3924289  1          NA          NA        NA
+IME_9948 0.6397032  0.4531380 0.1982019  1          NA          NA        NA
+IME_7131 2.3850238  0.6947010 0.1390054  1          NA          NA        NA
+IME_9079 1.7122264 -0.0661687 0.2066418  1          NA          NA        NA
+IME_8825 0.5088781  0.1283853 0.2060370  1          NA          NA        NA
+IME_5113 2.3613503  0.2943221 0.1472465  1          NA          NA        NA
+IME_5104 0.4210399 -0.8028135 0.2066047  1          NA          NA        NA
+IME_8184 2.4504916  0.2377840 0.3015451  1          NA          NA        NA
+IME_2565 1.8768737  0.7112042 0.4280473  1          NA          NA        NA
+IME_6445 2.1124129 -1.4630213 0.2131074  1          NA          NA        NA
+IME_3341 1.4125245 -1.8255361 0.1939104  1          NA          NA        NA
+IME_8694 0.7448782  0.0413092 0.2170145  1          NA          NA        NA
+IME_1433 2.2415700 -0.5342601 0.2786922  1          NA          NA        NA
+IME_3127 2.7507093 -1.7406323 0.1906238  1          NA          NA        NA
+IME_8340 0.3960031  0.5939755 0.2100789  1          NA          NA        NA
+IME_9914 0.6397733 -1.3501473 0.2023444  1          NA          NA        NA
+IME_6379 1.2738845  0.7867372 0.1695290  1          NA          NA        NA
+IRC_7671 2.4129786         NA        NA NA -0.70431228 -0.34896883 0.5783377
+IRC_5373 1.7536634         NA        NA NA  0.47754559  0.69166563 1.2580814
+IRC_6255 1.7053703         NA        NA NA  1.48382096  2.51590808 2.6338493
+IRC_9192 1.6287583         NA        NA NA  0.45006428  1.25489716 1.3777247
+IRC_8276 2.4041548         NA        NA NA  0.61735685  1.29887616 1.4043293
+IRC_7024 1.2065941         NA        NA NA -0.58220180  0.02979808 0.4479802
+IRC_3451 0.5474406         NA        NA NA  0.61658910  0.83302105 1.3946684
+IRC_4181 1.7066211         NA        NA NA -0.34318699  0.53355452 1.1515827
+IRC_7970 1.5855350         NA        NA NA -0.51996721 -0.16313568 0.6946162
+IRC_2335 1.5358174         NA        NA NA  0.01949704  0.23856252 0.4627136</code></pre>
+</div>
+</div>
+<p>Identificar itens com problemas de parâmetro. Excluir os itens que atendam a pelo menos um dos seguintes critérios: 1. <code>a &lt; 0.5</code> 2. <code>a &gt; 4.0</code> 3. todos os parâmetros <code>b</code> fora do intervalo de <code>–2.5 a 2.5</code> 4. <code>c &gt; 0.45</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>prob.a <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars)[pars<span class="sc">$</span>a <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">|</span> pars<span class="sc">$</span>a <span class="sc">&gt;</span> <span class="fl">4.0</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>prob.b <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars)[(<span class="fu">apply</span>(pars[, <span class="fu">c</span>(<span class="st">'b'</span>, <span class="st">'b1'</span>, <span class="st">'b2'</span>, <span class="st">'b3'</span>)], <span class="dv">1</span>, <span class="cf">function</span> (x) <span class="fu">all</span>(x <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">2.5</span> <span class="sc">|</span> x <span class="sc">&gt;</span> <span class="fl">2.5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>prob.c <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars)[pars<span class="sc">$</span>g <span class="sc">&gt;</span> <span class="fl">0.45</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>problemas <span class="ot">&lt;-</span> <span class="fu">c</span>(prob.a, prob.b, prob.c)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>problemas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "IME_9707" "IME_2376" "IME_6972" "IME_5104" "IME_8340" "IME_2786"
+ [7] "IME_6436" NA         NA         NA         NA         NA        
+[13] NA         NA         NA         NA         NA        </code></pre>
+</div>
+</div>
+<p>Caso um item seja excluído, seu parâmetro “a” deve ser definido como 0 (zero) na tabela de parâmetros e a variável est deve ser definida como FALSE para todos os parâmetros correspondentes a esse item.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tab.pars2 <span class="ot">&lt;-</span> tab.pars</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>tab.pars2[tab.pars2<span class="sc">$</span>item <span class="sc">%in%</span> problemas <span class="sc">&amp;</span> tab.pars2<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>, <span class="st">'value'</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>tab.pars2[tab.pars2<span class="sc">$</span>item <span class="sc">%in%</span> problemas, <span class="st">'est'</span>] <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> tab.pars2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem alguma relação com o fato de o teste ter IME e IRC. Se fosse só IME, isso não aconteceria. Mas veja:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pars2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(mirt<span class="sc">::</span><span class="fu">coef</span>(fit2, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pars2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 a           b          g   u a1         d          b1
+IME_2801 0.9358980  0.85573002  0.2750181   1 NA        NA          NA
+IME_6196 1.3971395  0.44429432  0.1888739   1 NA        NA          NA
+IME_6042 1.8207850  0.14710844  0.3890971   1 NA        NA          NA
+IME_2416 0.8102522 -1.49555435  0.2075510   1 NA        NA          NA
+IME_5228 2.0642702 -0.61292379  0.1629201   1 NA        NA          NA
+IME_2228 0.9622486  0.33548996  0.3183992   1 NA        NA          NA
+IME_2647 2.7465374  0.40119448  0.1568987   1 NA        NA          NA
+IME_1742 2.2891140 -0.72918881  0.2135651   1 NA        NA          NA
+IME_1437 2.7650584  0.14707977  0.3846643   1 NA        NA          NA
+IME_5369 1.9732055  1.44602158  0.2885581   1 NA        NA          NA
+IME_6881 1.1380615 -0.53831306  0.2144690   1 NA        NA          NA
+IME_6411 2.3868927 -1.72997663  0.1985393   1 NA        NA          NA
+IME_9707        NA          NA -1.3862944 999  0 1.1396254          NA
+IME_2376        NA          NA -1.3862944 999  0 0.9744948          NA
+IME_2405 2.0890176 -0.84808421  0.2151387   1 NA        NA          NA
+IME_3939 0.7372063 -0.68645291  0.2082449   1 NA        NA          NA
+IME_1554 0.5697656  0.60907263  0.2013940   1 NA        NA          NA
+IME_4568 0.9347655 -0.84869736  0.2183235   1 NA        NA          NA
+IME_2727 1.8295097 -0.19659776  0.3133153   1 NA        NA          NA
+IME_4274 2.9088544 -0.25804026  0.1335046   1 NA        NA          NA
+IME_3586 0.9698367  0.53556943  0.1814687   1 NA        NA          NA
+IME_6972        NA          NA -1.3862944 999  0 1.3050320          NA
+IME_9082 1.7185563 -1.46600706  0.2294763   1 NA        NA          NA
+IME_9631 2.3966923  1.76915969  0.3803847   1 NA        NA          NA
+IME_6436        NA          NA -1.3862944 999  0 0.4471942          NA
+IME_5479 1.4248678 -0.82054641  0.2336032   1 NA        NA          NA
+IME_6958 2.4555638 -1.66483343  0.2119760   1 NA        NA          NA
+IME_2786        NA          NA -1.3862944 999  0 4.7048893          NA
+IME_8580 0.7496513  0.42954955  0.2032715   1 NA        NA          NA
+IME_7417 1.1571269  0.23130144  0.2180193   1 NA        NA          NA
+IME_9843 2.8338967  0.32186760  0.1957508   1 NA        NA          NA
+IME_4882 2.0798810  0.14056177  0.2204848   1 NA        NA          NA
+IME_4071 0.8892221 -0.36039370  0.2074151   1 NA        NA          NA
+IME_4005 3.1060655  0.98085403  0.3919410   1 NA        NA          NA
+IME_9948 0.6373342  0.46224786  0.1981338   1 NA        NA          NA
+IME_7131 2.3853427  0.70131979  0.1389165   1 NA        NA          NA
+IME_9079 1.7101879 -0.05770491  0.2079205   1 NA        NA          NA
+IME_8825 0.5083683  0.14206089  0.2069728   1 NA        NA          NA
+IME_5113 2.3637730  0.30071323  0.1474879   1 NA        NA          NA
+IME_5104        NA          NA -1.3862944 999  0 0.8339139          NA
+IME_8184 2.4382324  0.24224010  0.3007124   1 NA        NA          NA
+IME_2565 1.9335282  0.72428094  0.4305994   1 NA        NA          NA
+IME_6445 2.1058162 -1.46247678  0.2142300   1 NA        NA          NA
+IME_3341 1.4054869 -1.82861542  0.1943571   1 NA        NA          NA
+IME_8694 0.7449754  0.05220357  0.2178317   1 NA        NA          NA
+IME_1433 2.2509833 -0.52602212  0.2810847   1 NA        NA          NA
+IME_3127 2.7514633 -1.74378237  0.1892144   1 NA        NA          NA
+IME_8340        NA          NA -1.3862944 999  0 0.2867381          NA
+IME_9914 0.6383839 -1.34545700  0.2026396   1 NA        NA          NA
+IME_6379 1.2750020  0.79465738  0.1697166   1 NA        NA          NA
+IRC_7671 2.4047893          NA         NA  NA NA        NA -0.70375812
+IRC_5373 1.7441956          NA         NA  NA NA        NA  0.48339299
+IRC_6255 1.6951246          NA         NA  NA NA        NA  1.49707385
+IRC_9192 1.6220576          NA         NA  NA NA        NA  0.45851115
+IRC_8276 2.3939590          NA         NA  NA NA        NA  0.62584246
+IRC_7024 1.2065347          NA         NA  NA NA        NA -0.57978427
+IRC_3451 0.5478313          NA         NA  NA NA        NA  0.61901165
+IRC_4181 1.6986794          NA         NA  NA NA        NA -0.34028106
+IRC_7970 1.5781636          NA         NA  NA NA        NA -0.51932453
+IRC_2335 1.5303168          NA         NA  NA NA        NA  0.02249731
+                  b2        b3
+IME_2801          NA        NA
+IME_6196          NA        NA
+IME_6042          NA        NA
+IME_2416          NA        NA
+IME_5228          NA        NA
+IME_2228          NA        NA
+IME_2647          NA        NA
+IME_1742          NA        NA
+IME_1437          NA        NA
+IME_5369          NA        NA
+IME_6881          NA        NA
+IME_6411          NA        NA
+IME_9707          NA        NA
+IME_2376          NA        NA
+IME_2405          NA        NA
+IME_3939          NA        NA
+IME_1554          NA        NA
+IME_4568          NA        NA
+IME_2727          NA        NA
+IME_4274          NA        NA
+IME_3586          NA        NA
+IME_6972          NA        NA
+IME_9082          NA        NA
+IME_9631          NA        NA
+IME_6436          NA        NA
+IME_5479          NA        NA
+IME_6958          NA        NA
+IME_2786          NA        NA
+IME_8580          NA        NA
+IME_7417          NA        NA
+IME_9843          NA        NA
+IME_4882          NA        NA
+IME_4071          NA        NA
+IME_4005          NA        NA
+IME_9948          NA        NA
+IME_7131          NA        NA
+IME_9079          NA        NA
+IME_8825          NA        NA
+IME_5113          NA        NA
+IME_5104          NA        NA
+IME_8184          NA        NA
+IME_2565          NA        NA
+IME_6445          NA        NA
+IME_3341          NA        NA
+IME_8694          NA        NA
+IME_1433          NA        NA
+IME_3127          NA        NA
+IME_8340          NA        NA
+IME_9914          NA        NA
+IME_6379          NA        NA
+IRC_7671 -0.34706499 0.5845239
+IRC_5373  0.69803768 1.2668117
+IRC_6255  2.53160280 2.6499906
+IRC_9192  1.26219297 1.3852105
+IRC_8276  1.30739745 1.4129338
+IRC_7024  0.03238581 0.4512792
+IRC_3451  0.83515000 1.3967540
+IRC_4181  0.53866793 1.1585940
+IRC_7970 -0.16099172 0.7015636
+IRC_2335  0.24193926 0.4666589</code></pre>
+</div>
+</div>
+<p>Note que o valor de <code>c</code> está negativo, o que não faz sentido. Mas esse valor corresponde ao <code>logit</code> do valor inicial desse parâmetro:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> .<span class="dv">2</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(p<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>p))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.386294</code></pre>
+</div>
+</div>
+<p>O mesmo vale para o parâmetro <code>u</code>, que está maior do que <code>1.0</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(p<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>p))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Inf</code></pre>
+</div>
+</div>
+<p>Agora vamos ver se existe algum outro item com problema</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>prob2.a <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars2)[pars2<span class="sc">$</span>a <span class="sc">&lt;</span> <span class="fl">0.5</span> <span class="sc">|</span> pars2<span class="sc">$</span>a <span class="sc">&gt;</span> <span class="fl">4.0</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>prob2.b <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars2)[(<span class="fu">apply</span>(pars2[, <span class="fu">c</span>(<span class="st">'b'</span>, <span class="st">'b1'</span>, <span class="st">'b2'</span>, <span class="st">'b3'</span>)], <span class="dv">1</span>, <span class="cf">function</span> (x) <span class="fu">all</span>(x <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">2.5</span> <span class="sc">|</span> x <span class="sc">&gt;</span> <span class="fl">2.5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>prob2.c <span class="ot">&lt;-</span> <span class="fu">rownames</span>(pars2)[pars2<span class="sc">$</span>g <span class="sc">&gt;</span> <span class="fl">0.45</span>]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>problemas2 <span class="ot">&lt;-</span> <span class="fu">c</span>(prob2.a, prob2.b, prob2.c)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>problemas2 <span class="ot">&lt;-</span> problemas2[<span class="sc">!</span><span class="fu">is.na</span>(problemas2)]</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>problemas2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "IME_9707" "IME_2376" "IME_6972" "IME_6436" "IME_2786" "IME_5104" "IME_8340"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="sc">!</span>problemas2 <span class="sc">%in%</span> <span class="fu">rownames</span>(pars2)[<span class="fu">is.na</span>(pars2<span class="sc">$</span>a)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>integer(0)</code></pre>
+</div>
+</div>
+</section>
+<section id="verificar-ajuste-v2" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="verificar-ajuste-v2"><span class="header-section-number">4.2.3</span> Verificar ajuste (V2)</h3>
+<p>Para verificar o ajuste dos itens, vamos usar a medida de RMSD. Eu adaptei a função do mirt para rodar com um grupo único.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>ajuste <span class="ot">&lt;-</span> INEPsico<span class="sc">::</span><span class="fu">dif.mirt</span>(fit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in INEPsico::dif.mirt(fit2): Como o grupo antigo não foi incluído, não
+será feita análise de DIF.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ajuste<span class="sc">$</span>rmsd.pisa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               P.0       P.1 P.2 P.3 P.4
+IME_9707 0.1101192 0.1101192  NA  NA  NA
+IME_2376 0.1203393 0.1203393  NA  NA  NA
+IME_6436 0.1557912 0.1557912  NA  NA  NA
+IME_5104 0.1147956 0.1147956  NA  NA  NA
+IME_8340 0.1169657 0.1169657  NA  NA  NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="sc">!</span><span class="fu">rownames</span>(ajuste<span class="sc">$</span>rmsd.pisa) <span class="sc">%in%</span> <span class="fu">rownames</span>(pars2)[<span class="fu">is.na</span>(pars2<span class="sc">$</span>a)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>integer(0)</code></pre>
+</div>
+</div>
+<section id="gráficos-1" class="level4" data-number="4.2.3.1">
+<h4 data-number="4.2.3.1" class="anchored" data-anchor-id="gráficos-1"><span class="header-section-number">4.2.3.1</span> Gráficos</h4>
+<p>Curva de informação do teste</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'info'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Confiabilidade do teste em função do escore</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'rxx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Erro padrão de medida em função do escore</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'SE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Informação do teste e erro padrão</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'infoSE'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Curva de informação de cada item</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'infotrace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Curva característica de cada item</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit, <span class="at">type =</span> <span class="st">'trace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analise_misto_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./analise_graded.html" class="pagination-link" aria-label="Análise de itens politômicos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Análise de itens politômicos</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./fipc.html" class="pagination-link" aria-label="Calibração com parâmetros de itens fixos">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Calibração com parâmetros de itens fixos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

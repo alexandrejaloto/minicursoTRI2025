@@ -1,0 +1,17 @@
+project:
+  type: book
+
+book:
+  title: "Minicurso TRI 2025"
+  author: "Alexandre Jaloto"
+  date: "10/21/2025"
+  chapters:
+    - index.qmd
+    - analise_2pl.qmd
+    - analise_graded.qmd
+    - analise_misto.qmd
+    - fipc.qmd
+
+format:
+  html:
+    theme: cosmo

@@ -1,0 +1,223 @@
+# Análise com itens dicotômicos e politômicos
+
+```{r, echo=FALSE, include=FALSE}
+library(mirt)
+devtools::load_all()
+```
+
+## Preparação
+
+Importar banco
+
+```{r}
+data("banco.misto", package = 'minicursoTRI2025')
+```
+
+Nome das variáveis do banco
+
+```{r}
+names(banco.misto)
+```
+
+São 60 itens, sendo 50 Itens de Múltipla Escolha (IME) e 10 Itens de Resposta Construída (IRC).
+
+## Calibração
+
+### Calibração inicial (V0)
+
+Gerar a tabela inicial de parâmetros
+
+```{r}
+tab.pars <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = 'values')
+```
+
+Configurar as prioris, considerando que os IMEs possuem cinco categorias de resposta.
+
+```{r}
+tab.pars[tab.pars$name == 'a1', 'value'] <- 1.7
+tab.pars[tab.pars$name == 'a1', 'prior_1'] <- 0.53062825106217
+tab.pars[tab.pars$name == 'a1', 'prior_2'] <- 0.5
+tab.pars[tab.pars$name == 'a1', 'prior.type'] <- 'lnorm'
+tab.pars[tab.pars$name == 'a1', 'lbound'] <- 0
+tab.pars[tab.pars$name == 'a1', 'ubound'] <- Inf
+
+tab.pars[tab.pars$name == 'g', 'value'] <- .2
+tab.pars[tab.pars$name == 'g', 'prior_1'] <- 5
+tab.pars[tab.pars$name == 'g', 'prior_2'] <- 17
+tab.pars[tab.pars$name == 'g', 'prior.type'] <- 'expbeta'
+tab.pars[tab.pars$name == 'g', 'lbound'] <- 0
+tab.pars[tab.pars$name == 'g', 'ubound'] <- 1
+```
+
+
+Calibrar os itens
+
+```{r}
+fit <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = tab.pars)
+```
+
+#### Gráficos
+
+Curva de informação do teste
+
+```{r}
+plot(fit, type = 'info')
+```
+
+Confiabilidade do teste em função do escore
+
+```{r}
+plot(fit, type = 'rxx')
+```
+
+Erro padrão de medida em função do escore
+
+```{r}
+plot(fit, type = 'SE')
+```
+
+Informação do teste e erro padrão
+
+```{r}
+plot(fit, type = 'infoSE')
+```
+
+Curva de informação de cada item
+
+```{r}
+plot(fit, type = 'infotrace')
+```
+
+Curva característica de cada item
+
+```{r}
+plot(fit, type = 'trace')
+```
+
+Gráficos de cada item
+
+```{r}
+itemplot(fit, 1, 'info')
+itemplot(fit, 1, 'SE')
+itemplot(fit, 1, 'trace')
+itemplot(fit, 1, 'infoSE')
+itemplot(fit, 1, 'infotrace')
+```
+
+### Análise dos parâmetros dos itens (V1)
+
+```{r}
+coef(fit, IRTpars = TRUE, simplify = TRUE)
+```
+
+Armazenar os parâmetros em um objeto
+
+```{r}
+pars <- data.frame(coef(fit, IRTpars = TRUE, simplify = TRUE)$items)
+pars
+```
+
+Identificar itens com problemas de parâmetro. Excluir os itens que atendam a pelo menos um dos seguintes critérios:
+1. `a < 0.5`
+2. `a > 4.0`
+3. todos os parâmetros `b` fora do intervalo de `–2.5 a 2.5`
+4. `c > 0.45`
+
+
+```{r}
+prob.a <- rownames(pars)[pars$a < 0.5 | pars$a > 4.0]
+prob.b <- rownames(pars)[(apply(pars[, c('b', 'b1', 'b2', 'b3')], 1, function (x) all(x < -2.5 | x > 2.5, na.rm = TRUE)))]
+prob.c <- rownames(pars)[pars$g > 0.45]
+
+problemas <- c(prob.a, prob.b, prob.c)
+problemas
+```
+Caso um item seja excluído, seu parâmetro “a” deve ser definido como 0 (zero) na tabela de parâmetros e a variável est deve ser definida como FALSE para todos os parâmetros correspondentes a esse item.
+
+```{r}
+tab.pars2 <- tab.pars
+tab.pars2[tab.pars2$item %in% problemas & tab.pars2$name == 'a1', 'value'] <- 0
+tab.pars2[tab.pars2$item %in% problemas, 'est'] <- FALSE
+fit2 <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = tab.pars2)
+```
+Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem alguma relação com o fato de o teste ter IME e IRC. Se fosse só IME, isso não aconteceria. Mas veja:
+```{r}
+pars2 <- data.frame(mirt::coef(fit2, IRTpars = TRUE, simplify = TRUE)$items)
+pars2
+```
+
+Note que o valor de `c` está negativo, o que não faz sentido. Mas esse valor corresponde ao `logit` do valor inicial desse parâmetro:
+```{r}
+p <- .2
+log(p/(1-p))
+```
+
+O mesmo vale para o parâmetro `u`, que está maior do que `1.0`.
+
+```{r}
+p <- 1
+log(p/(1-p))
+```
+
+Agora vamos ver se existe algum outro item com problema
+
+```{r}
+
+prob2.a <- rownames(pars2)[pars2$a < 0.5 | pars2$a > 4.0]
+prob2.b <- rownames(pars2)[(apply(pars2[, c('b', 'b1', 'b2', 'b3')], 1, function (x) all(x < -2.5 | x > 2.5, na.rm = TRUE)))]
+prob2.c <- rownames(pars2)[pars2$g > 0.45]
+
+problemas2 <- c(prob2.a, prob2.b, prob2.c)
+
+problemas2 <- problemas2[!is.na(problemas2)]
+problemas2
+which(!problemas2 %in% rownames(pars2)[is.na(pars2$a)])
+```
+### Verificar ajuste (V2)
+
+Para verificar o ajuste dos itens, vamos usar a medida de RMSD. Eu adaptei a função do mirt para rodar com um grupo único.
+
+```{r}
+ajuste <- INEPsico::dif.mirt(fit2)
+ajuste$rmsd.pisa
+which(!rownames(ajuste$rmsd.pisa) %in% rownames(pars2)[is.na(pars2$a)])
+```
+
+#### Gráficos
+
+Curva de informação do teste
+
+```{r}
+plot(fit, type = 'info')
+```
+
+Confiabilidade do teste em função do escore
+
+```{r}
+plot(fit, type = 'rxx')
+```
+
+Erro padrão de medida em função do escore
+
+```{r}
+plot(fit, type = 'SE')
+```
+
+Informação do teste e erro padrão
+
+```{r}
+plot(fit, type = 'infoSE')
+```
+
+Curva de informação de cada item
+
+```{r}
+plot(fit, type = 'infotrace')
+```
+
+Curva característica de cada item
+
+```{r}
+plot(fit, type = 'trace')
+```
+
