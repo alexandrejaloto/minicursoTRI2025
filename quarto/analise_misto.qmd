@@ -140,11 +140,13 @@ tab.pars2[tab.pars2$item %in% problemas & tab.pars2$name == 'a1', 'value'] <- 0
 tab.pars2[tab.pars2$item %in% problemas, 'est'] <- FALSE
 fit2 <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = tab.pars2)
 ```
-Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem alguma relação com o fato de o teste ter IME e IRC. Se fosse só IME, isso não aconteceria. Mas veja:
+
+Avalie os parâmetros:
 ```{r}
 pars2 <- data.frame(mirt::coef(fit2, IRTpars = TRUE, simplify = TRUE)$items)
 pars2
 ```
+Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem relação com a transformação do `d` em `b`, pois como `a = 0` e `b = -d/a`, então essa transformação não se torna possível.
 
 Note que o valor de `c` está negativo, o que não faz sentido. Mas esse valor corresponde ao `logit` do valor inicial desse parâmetro:
 ```{r}
@@ -221,3 +223,40 @@ Curva característica de cada item
 plot(fit, type = 'trace')
 ```
 
+## Calibração sem priori
+
+A título de curiosidade, vamos ver o que acontece se não utilizarmos priori para a calibração. Primeiro, vamos deixar só a priori do `c`.
+
+```{r}
+tab.pars <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = 'values')
+
+tab.pars[tab.pars$name == 'g', 'value'] <- .2
+tab.pars[tab.pars$name == 'g', 'prior_1'] <- 5
+tab.pars[tab.pars$name == 'g', 'prior_2'] <- 17
+tab.pars[tab.pars$name == 'g', 'prior.type'] <- 'expbeta'
+tab.pars[tab.pars$name == 'g', 'lbound'] <- 0
+tab.pars[tab.pars$name == 'g', 'ubound'] <- 1
+
+fit3 <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001, pars = tab.pars)
+
+```
+
+Veja o que acontece com os dois primeiros itens.
+```{r}
+pars3 <- data.frame(coef(fit3, IRTpars = TRUE, simplify = TRUE)$items)
+pars3
+
+```
+
+Agora vamos calibrar sem priori estabelecida para os parâmetros `a` e `c`
+```{r}
+fit4 <- mirt(data = banco.misto, model = 1, itemtype = c(rep('3PL', 50), rep('graded', 10)), TOL = 0.001)
+```
+
+Veja novamente os dois primeiros itens.
+```{r}
+pars4 <- data.frame(coef(fit4, IRTpars = TRUE, simplify = TRUE)$items)
+pars4
+```
+
+Para discussão: qual o impacto de usarmos priori na calibração?

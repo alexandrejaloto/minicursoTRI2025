@@ -17,3 +17,6 @@ Remotes:
     alexandrejaloto/inepsico
 URL: https://github.com/alexandrejaloto/minicursoTRI2025
 BugReports: https://github.com/alexandrejaloto/minicursoTRI2025/issues
+Depends: 
+    R (>= 3.5)
+LazyData: true

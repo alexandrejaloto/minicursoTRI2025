@@ -187,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#análise-dos-parâmetros-dos-itens-v1" id="toc-análise-dos-parâmetros-dos-itens-v1" class="nav-link" data-scroll-target="#análise-dos-parâmetros-dos-itens-v1"><span class="header-section-number">4.2.2</span> Análise dos parâmetros dos itens (V1)</a></li>
   <li><a href="#verificar-ajuste-v2" id="toc-verificar-ajuste-v2" class="nav-link" data-scroll-target="#verificar-ajuste-v2"><span class="header-section-number">4.2.3</span> Verificar ajuste (V2)</a></li>
   </ul></li>
+  <li><a href="#calibração-sem-priori" id="toc-calibração-sem-priori" class="nav-link" data-scroll-target="#calibração-sem-priori"><span class="header-section-number">4.3</span> Calibração sem priori</a></li>
   </ul>
 </nav>
     </div>
@@ -384,66 +385,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>$items
              a      b     g  u     b1     b2    b3
-IME_2801 0.933  0.843 0.274  1     NA     NA    NA
-IME_6196 1.397  0.436 0.188  1     NA     NA    NA
-IME_6042 1.820  0.136 0.388  1     NA     NA    NA
-IME_2416 0.813 -1.494 0.208  1     NA     NA    NA
-IME_5228 2.067 -0.616 0.163  1     NA     NA    NA
-IME_2228 0.977  0.339 0.322  1     NA     NA    NA
-IME_2647 2.743  0.393 0.156  1     NA     NA    NA
-IME_1742 2.291 -0.732 0.214  1     NA     NA    NA
-IME_1437 2.768  0.142 0.385  1     NA     NA    NA
-IME_5369 1.956  1.441 0.289  1     NA     NA    NA
-IME_6881 1.143 -0.544 0.214  1     NA     NA    NA
-IME_6411 2.392 -1.729 0.198  1     NA     NA    NA
-IME_9707 0.448 -1.435 0.207  1     NA     NA    NA
-IME_2376 0.497 -0.987 0.205  1     NA     NA    NA
-IME_2405 2.099 -0.844 0.219  1     NA     NA    NA
-IME_3939 0.738 -0.689 0.209  1     NA     NA    NA
-IME_1554 0.570  0.607 0.202  1     NA     NA    NA
-IME_4568 0.939 -0.847 0.220  1     NA     NA    NA
-IME_2727 1.844 -0.195 0.316  1     NA     NA    NA
-IME_4274 2.930 -0.262 0.133  1     NA     NA    NA
-IME_3586 0.969  0.525 0.181  1     NA     NA    NA
-IME_6972 0.364 -2.185 0.205  1     NA     NA    NA
-IME_9082 1.723 -1.466 0.229  1     NA     NA    NA
-IME_9631 2.304  1.771 0.380  1     NA     NA    NA
-IME_6436 1.870  0.926 0.453  1     NA     NA    NA
-IME_5479 1.428 -0.821 0.235  1     NA     NA    NA
-IME_6958 2.457 -1.666 0.210  1     NA     NA    NA
-IME_2786 1.863 -3.289 0.201  1     NA     NA    NA
-IME_8580 0.746  0.414 0.201  1     NA     NA    NA
-IME_7417 1.158  0.222 0.217  1     NA     NA    NA
-IME_9843 2.846  0.314 0.195  1     NA     NA    NA
-IME_4882 2.074  0.130 0.218  1     NA     NA    NA
-IME_4071 0.891 -0.369 0.207  1     NA     NA    NA
-IME_4005 3.055  0.977 0.392  1     NA     NA    NA
-IME_9948 0.640  0.453 0.198  1     NA     NA    NA
-IME_7131 2.385  0.695 0.139  1     NA     NA    NA
-IME_9079 1.712 -0.066 0.207  1     NA     NA    NA
-IME_8825 0.509  0.128 0.206  1     NA     NA    NA
-IME_5113 2.361  0.294 0.147  1     NA     NA    NA
-IME_5104 0.421 -0.803 0.207  1     NA     NA    NA
-IME_8184 2.450  0.238 0.302  1     NA     NA    NA
-IME_2565 1.877  0.711 0.428  1     NA     NA    NA
-IME_6445 2.112 -1.463 0.213  1     NA     NA    NA
-IME_3341 1.413 -1.826 0.194  1     NA     NA    NA
-IME_8694 0.745  0.041 0.217  1     NA     NA    NA
-IME_1433 2.242 -0.534 0.279  1     NA     NA    NA
-IME_3127 2.751 -1.741 0.191  1     NA     NA    NA
-IME_8340 0.396  0.594 0.210  1     NA     NA    NA
-IME_9914 0.640 -1.350 0.202  1     NA     NA    NA
-IME_6379 1.274  0.787 0.170  1     NA     NA    NA
-IRC_7671 2.413     NA    NA NA -0.704 -0.349 0.578
-IRC_5373 1.754     NA    NA NA  0.478  0.692 1.258
-IRC_6255 1.705     NA    NA NA  1.484  2.516 2.634
-IRC_9192 1.629     NA    NA NA  0.450  1.255 1.378
-IRC_8276 2.404     NA    NA NA  0.617  1.299 1.404
-IRC_7024 1.207     NA    NA NA -0.582  0.030 0.448
-IRC_3451 0.547     NA    NA NA  0.617  0.833 1.395
-IRC_4181 1.707     NA    NA NA -0.343  0.534 1.152
-IRC_7970 1.586     NA    NA NA -0.520 -0.163 0.695
-IRC_2335 1.536     NA    NA NA  0.019  0.239 0.463
+IME_2801 0.821  8.269 0.474  1     NA     NA    NA
+IME_6196 0.884  8.415 0.495  1     NA     NA    NA
+IME_6042 1.832  0.139 0.389  1     NA     NA    NA
+IME_2416 0.815 -1.490 0.209  1     NA     NA    NA
+IME_5228 2.063 -0.615 0.163  1     NA     NA    NA
+IME_2228 1.022  0.389 0.336  1     NA     NA    NA
+IME_2647 2.762  0.396 0.157  1     NA     NA    NA
+IME_1742 2.283 -0.732 0.214  1     NA     NA    NA
+IME_1437 2.776  0.145 0.386  1     NA     NA    NA
+IME_5369 1.948  1.442 0.288  1     NA     NA    NA
+IME_6881 1.142 -0.543 0.214  1     NA     NA    NA
+IME_6411 2.382 -1.732 0.198  1     NA     NA    NA
+IME_9707 0.450 -1.428 0.207  1     NA     NA    NA
+IME_2376 0.497 -0.984 0.206  1     NA     NA    NA
+IME_2405 2.091 -0.845 0.219  1     NA     NA    NA
+IME_3939 0.739 -0.686 0.210  1     NA     NA    NA
+IME_1554 0.571  0.611 0.203  1     NA     NA    NA
+IME_4568 0.935 -0.849 0.220  1     NA     NA    NA
+IME_2727 1.849 -0.195 0.316  1     NA     NA    NA
+IME_4274 2.935 -0.260 0.133  1     NA     NA    NA
+IME_3586 0.974  0.526 0.181  1     NA     NA    NA
+IME_6972 0.365 -2.183 0.205  1     NA     NA    NA
+IME_9082 1.717 -1.467 0.230  1     NA     NA    NA
+IME_9631 2.408  1.768 0.381  1     NA     NA    NA
+IME_6436 1.878  0.926 0.453  1     NA     NA    NA
+IME_5479 1.438 -0.817 0.235  1     NA     NA    NA
+IME_6958 2.444 -1.670 0.210  1     NA     NA    NA
+IME_2786 1.857 -3.294 0.201  1     NA     NA    NA
+IME_8580 0.748  0.414 0.201  1     NA     NA    NA
+IME_7417 1.165  0.230 0.220  1     NA     NA    NA
+IME_9843 2.853  0.316 0.196  1     NA     NA    NA
+IME_4882 2.095  0.135 0.221  1     NA     NA    NA
+IME_4071 0.892 -0.368 0.207  1     NA     NA    NA
+IME_4005 3.052  0.978 0.392  1     NA     NA    NA
+IME_9948 0.642  0.456 0.199  1     NA     NA    NA
+IME_7131 2.382  0.694 0.139  1     NA     NA    NA
+IME_9079 1.718 -0.064 0.207  1     NA     NA    NA
+IME_8825 0.508  0.130 0.206  1     NA     NA    NA
+IME_5113 2.384  0.297 0.148  1     NA     NA    NA
+IME_5104 0.420 -0.805 0.206  1     NA     NA    NA
+IME_8184 2.439  0.236 0.301  1     NA     NA    NA
+IME_2565 1.886  0.711 0.428  1     NA     NA    NA
+IME_6445 2.106 -1.464 0.214  1     NA     NA    NA
+IME_3341 1.405 -1.831 0.194  1     NA     NA    NA
+IME_8694 0.744  0.043 0.217  1     NA     NA    NA
+IME_1433 2.252 -0.532 0.279  1     NA     NA    NA
+IME_3127 2.725 -1.746 0.191  1     NA     NA    NA
+IME_8340 0.397  0.595 0.210  1     NA     NA    NA
+IME_9914 0.640 -1.349 0.202  1     NA     NA    NA
+IME_6379 1.276  0.787 0.170  1     NA     NA    NA
+IRC_7671 2.418     NA    NA NA -0.702 -0.347 0.579
+IRC_5373 1.759     NA    NA NA  0.478  0.691 1.257
+IRC_6255 1.715     NA    NA NA  1.480  2.507 2.625
+IRC_9192 1.631     NA    NA NA  0.452  1.253 1.376
+IRC_8276 2.401     NA    NA NA  0.618  1.299 1.405
+IRC_7024 1.205     NA    NA NA -0.581  0.031 0.449
+IRC_3451 0.549     NA    NA NA  0.616  0.832 1.392
+IRC_4181 1.710     NA    NA NA -0.342  0.534 1.151
+IRC_7970 1.584     NA    NA NA -0.519 -0.162 0.696
+IRC_2335 1.535     NA    NA NA  0.021  0.240 0.464
 
 $means
 F1 
@@ -459,67 +460,67 @@ F1  1</code></pre>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pars <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">coef</span>(fit, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                 a          b         g  u          b1          b2        b3
-IME_2801 0.9333110  0.8431687 0.2738618  1          NA          NA        NA
-IME_6196 1.3966245  0.4358323 0.1884184  1          NA          NA        NA
-IME_6042 1.8200476  0.1364890 0.3878231  1          NA          NA        NA
-IME_2416 0.8134274 -1.4936104 0.2084080  1          NA          NA        NA
-IME_5228 2.0673337 -0.6155756 0.1633001  1          NA          NA        NA
-IME_2228 0.9768479  0.3393796 0.3218452  1          NA          NA        NA
-IME_2647 2.7425083  0.3934639 0.1562361  1          NA          NA        NA
-IME_1742 2.2912997 -0.7315294 0.2137012  1          NA          NA        NA
-IME_1437 2.7681658  0.1419022 0.3850390  1          NA          NA        NA
-IME_5369 1.9558039  1.4412107 0.2885158  1          NA          NA        NA
-IME_6881 1.1431800 -0.5441748 0.2137776  1          NA          NA        NA
-IME_6411 2.3918856 -1.7288065 0.1977068  1          NA          NA        NA
-IME_9707 0.4482291 -1.4346212 0.2071189  1          NA          NA        NA
-IME_2376 0.4968861 -0.9873322 0.2052859  1          NA          NA        NA
-IME_2405 2.0985709 -0.8437899 0.2188553  1          NA          NA        NA
-IME_3939 0.7375823 -0.6886315 0.2094584  1          NA          NA        NA
-IME_1554 0.5702567  0.6070965 0.2024641  1          NA          NA        NA
-IME_4568 0.9385829 -0.8467838 0.2202114  1          NA          NA        NA
-IME_2727 1.8439372 -0.1951071 0.3157657  1          NA          NA        NA
-IME_4274 2.9301757 -0.2619318 0.1329982  1          NA          NA        NA
-IME_3586 0.9688490  0.5254432 0.1807632  1          NA          NA        NA
-IME_6972 0.3644981 -2.1852185 0.2045954  1          NA          NA        NA
-IME_9082 1.7232423 -1.4659150 0.2293080  1          NA          NA        NA
-IME_9631 2.3036937  1.7711546 0.3796293  1          NA          NA        NA
-IME_6436 1.8698224  0.9263637 0.4527068  1          NA          NA        NA
-IME_5479 1.4281737 -0.8209602 0.2349581  1          NA          NA        NA
-IME_6958 2.4565891 -1.6664214 0.2098317  1          NA          NA        NA
-IME_2786 1.8631112 -3.2887529 0.2007891  1          NA          NA        NA
-IME_8580 0.7461847  0.4142135 0.2013160  1          NA          NA        NA
-IME_7417 1.1576260  0.2220573 0.2173599  1          NA          NA        NA
-IME_9843 2.8457278  0.3144728 0.1953545  1          NA          NA        NA
-IME_4882 2.0739191  0.1301044 0.2184821  1          NA          NA        NA
-IME_4071 0.8914844 -0.3688656 0.2066603  1          NA          NA        NA
-IME_4005 3.0547332  0.9767776 0.3924289  1          NA          NA        NA
-IME_9948 0.6397032  0.4531380 0.1982019  1          NA          NA        NA
-IME_7131 2.3850238  0.6947010 0.1390054  1          NA          NA        NA
-IME_9079 1.7122264 -0.0661687 0.2066418  1          NA          NA        NA
-IME_8825 0.5088781  0.1283853 0.2060370  1          NA          NA        NA
-IME_5113 2.3613503  0.2943221 0.1472465  1          NA          NA        NA
-IME_5104 0.4210399 -0.8028135 0.2066047  1          NA          NA        NA
-IME_8184 2.4504916  0.2377840 0.3015451  1          NA          NA        NA
-IME_2565 1.8768737  0.7112042 0.4280473  1          NA          NA        NA
-IME_6445 2.1124129 -1.4630213 0.2131074  1          NA          NA        NA
-IME_3341 1.4125245 -1.8255361 0.1939104  1          NA          NA        NA
-IME_8694 0.7448782  0.0413092 0.2170145  1          NA          NA        NA
-IME_1433 2.2415700 -0.5342601 0.2786922  1          NA          NA        NA
-IME_3127 2.7507093 -1.7406323 0.1906238  1          NA          NA        NA
-IME_8340 0.3960031  0.5939755 0.2100789  1          NA          NA        NA
-IME_9914 0.6397733 -1.3501473 0.2023444  1          NA          NA        NA
-IME_6379 1.2738845  0.7867372 0.1695290  1          NA          NA        NA
-IRC_7671 2.4129786         NA        NA NA -0.70431228 -0.34896883 0.5783377
-IRC_5373 1.7536634         NA        NA NA  0.47754559  0.69166563 1.2580814
-IRC_6255 1.7053703         NA        NA NA  1.48382096  2.51590808 2.6338493
-IRC_9192 1.6287583         NA        NA NA  0.45006428  1.25489716 1.3777247
-IRC_8276 2.4041548         NA        NA NA  0.61735685  1.29887616 1.4043293
-IRC_7024 1.2065941         NA        NA NA -0.58220180  0.02979808 0.4479802
-IRC_3451 0.5474406         NA        NA NA  0.61658910  0.83302105 1.3946684
-IRC_4181 1.7066211         NA        NA NA -0.34318699  0.53355452 1.1515827
-IRC_7970 1.5855350         NA        NA NA -0.51996721 -0.16313568 0.6946162
-IRC_2335 1.5358174         NA        NA NA  0.01949704  0.23856252 0.4627136</code></pre>
+<pre><code>                 a           b         g  u          b1          b2        b3
+IME_2801 0.8214861  8.26863160 0.4743639  1          NA          NA        NA
+IME_6196 0.8843730  8.41453017 0.4951761  1          NA          NA        NA
+IME_6042 1.8321034  0.13885317 0.3886310  1          NA          NA        NA
+IME_2416 0.8148057 -1.48997303 0.2087524  1          NA          NA        NA
+IME_5228 2.0627680 -0.61537353 0.1634006  1          NA          NA        NA
+IME_2228 1.0216307  0.38915584 0.3356793  1          NA          NA        NA
+IME_2647 2.7620356  0.39600393 0.1573480  1          NA          NA        NA
+IME_1742 2.2830868 -0.73160041 0.2137884  1          NA          NA        NA
+IME_1437 2.7757475  0.14514874 0.3860544  1          NA          NA        NA
+IME_5369 1.9483597  1.44182870 0.2882603  1          NA          NA        NA
+IME_6881 1.1420625 -0.54343336 0.2140259  1          NA          NA        NA
+IME_6411 2.3819573 -1.73188067 0.1976757  1          NA          NA        NA
+IME_9707 0.4501269 -1.42780357 0.2071887  1          NA          NA        NA
+IME_2376 0.4972324 -0.98394349 0.2056159  1          NA          NA        NA
+IME_2405 2.0912046 -0.84487028 0.2185630  1          NA          NA        NA
+IME_3939 0.7385297 -0.68621960 0.2096965  1          NA          NA        NA
+IME_1554 0.5705617  0.61140629 0.2030365  1          NA          NA        NA
+IME_4568 0.9345845 -0.84928308 0.2199736  1          NA          NA        NA
+IME_2727 1.8488554 -0.19460646 0.3157450  1          NA          NA        NA
+IME_4274 2.9354136 -0.25973021 0.1334435  1          NA          NA        NA
+IME_3586 0.9743280  0.52601948 0.1813060  1          NA          NA        NA
+IME_6972 0.3647119 -2.18293233 0.2046337  1          NA          NA        NA
+IME_9082 1.7170362 -1.46738564 0.2300227  1          NA          NA        NA
+IME_9631 2.4075921  1.76792553 0.3811913  1          NA          NA        NA
+IME_6436 1.8781443  0.92588962 0.4526950  1          NA          NA        NA
+IME_5479 1.4375738 -0.81698213 0.2354140  1          NA          NA        NA
+IME_6958 2.4435127 -1.66998524 0.2097429  1          NA          NA        NA
+IME_2786 1.8566884 -3.29392956 0.2009260  1          NA          NA        NA
+IME_8580 0.7475192  0.41421788 0.2012675  1          NA          NA        NA
+IME_7417 1.1648071  0.23035366 0.2200278  1          NA          NA        NA
+IME_9843 2.8525495  0.31552448 0.1956518  1          NA          NA        NA
+IME_4882 2.0954711  0.13494350 0.2205939  1          NA          NA        NA
+IME_4071 0.8920520 -0.36769998 0.2067612  1          NA          NA        NA
+IME_4005 3.0522290  0.97831197 0.3924516  1          NA          NA        NA
+IME_9948 0.6420989  0.45578776 0.1987911  1          NA          NA        NA
+IME_7131 2.3817427  0.69407013 0.1387845  1          NA          NA        NA
+IME_9079 1.7175213 -0.06405283 0.2074173  1          NA          NA        NA
+IME_8825 0.5076108  0.13010965 0.2060407  1          NA          NA        NA
+IME_5113 2.3842964  0.29671837 0.1484577  1          NA          NA        NA
+IME_5104 0.4195258 -0.80481156 0.2064628  1          NA          NA        NA
+IME_8184 2.4393898  0.23584794 0.3005951  1          NA          NA        NA
+IME_2565 1.8855861  0.71114927 0.4281523  1          NA          NA        NA
+IME_6445 2.1062798 -1.46350777 0.2141084  1          NA          NA        NA
+IME_3341 1.4046056 -1.83105754 0.1941398  1          NA          NA        NA
+IME_8694 0.7441664  0.04297872 0.2171891  1          NA          NA        NA
+IME_1433 2.2520273 -0.53180988 0.2791873  1          NA          NA        NA
+IME_3127 2.7253034 -1.74615464 0.1905756  1          NA          NA        NA
+IME_8340 0.3974301  0.59495417 0.2102924  1          NA          NA        NA
+IME_9914 0.6396716 -1.34885407 0.2024773  1          NA          NA        NA
+IME_6379 1.2758918  0.78678584 0.1696855  1          NA          NA        NA
+IRC_7671 2.4181988          NA        NA NA -0.70216646 -0.34652048 0.5792236
+IRC_5373 1.7588085          NA        NA NA  0.47769885  0.69118766 1.2565150
+IRC_6255 1.7145591          NA        NA NA  1.47962312  2.50736529 2.6252775
+IRC_9192 1.6314484          NA        NA NA  0.45183686  1.25345088 1.3759833
+IRC_8276 2.4006990          NA        NA NA  0.61827262  1.29925459 1.4046180
+IRC_7024 1.2050078          NA        NA NA -0.58149604  0.03060869 0.4491517
+IRC_3451 0.5487694          NA        NA NA  0.61597456  0.83179651 1.3922514
+IRC_4181 1.7102233          NA        NA NA -0.34162359  0.53355414 1.1507895
+IRC_7970 1.5843772          NA        NA NA -0.51927343 -0.16240811 0.6957930
+IRC_2335 1.5351697          NA        NA NA  0.02081102  0.23965506 0.4635621</code></pre>
 </div>
 </div>
 <p>Identificar itens com problemas de parâmetro. Excluir os itens que atendam a pelo menos um dos seguintes critérios: 1. <code>a &lt; 0.5</code> 2. <code>a &gt; 4.0</code> 3. todos os parâmetros <code>b</code> fora do intervalo de <code>–2.5 a 2.5</code> 4. <code>c &gt; 0.45</code></p>
@@ -531,9 +532,10 @@ IRC_2335 1.5358174         NA        NA NA  0.01949704  0.23856252 0.4627136</co
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>problemas <span class="ot">&lt;-</span> <span class="fu">c</span>(prob.a, prob.b, prob.c)</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>problemas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "IME_9707" "IME_2376" "IME_6972" "IME_5104" "IME_8340" "IME_2786"
- [7] "IME_6436" NA         NA         NA         NA         NA        
-[13] NA         NA         NA         NA         NA        </code></pre>
+<pre><code> [1] "IME_9707" "IME_2376" "IME_6972" "IME_5104" "IME_8340" "IME_2801"
+ [7] "IME_6196" "IME_2786" "IME_2801" "IME_6196" "IME_6436" NA        
+[13] NA         NA         NA         NA         NA         NA        
+[19] NA         NA         NA        </code></pre>
 </div>
 </div>
 <p>Caso um item seja excluído, seu parâmetro “a” deve ser definido como 0 (zero) na tabela de parâmetros e a variável est deve ser definida como FALSE para todos os parâmetros correspondentes a esse item.</p>
@@ -543,72 +545,72 @@ IRC_2335 1.5358174         NA        NA NA  0.01949704  0.23856252 0.4627136</co
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>tab.pars2[tab.pars2<span class="sc">$</span>item <span class="sc">%in%</span> problemas, <span class="st">'est'</span>] <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> tab.pars2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem alguma relação com o fato de o teste ter IME e IRC. Se fosse só IME, isso não aconteceria. Mas veja:</p>
+<p>Avalie os parâmetros:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pars2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(mirt<span class="sc">::</span><span class="fu">coef</span>(fit2, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pars2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                 a           b          g   u a1         d          b1
-IME_2801 0.9358980  0.85573002  0.2750181   1 NA        NA          NA
-IME_6196 1.3971395  0.44429432  0.1888739   1 NA        NA          NA
-IME_6042 1.8207850  0.14710844  0.3890971   1 NA        NA          NA
-IME_2416 0.8102522 -1.49555435  0.2075510   1 NA        NA          NA
-IME_5228 2.0642702 -0.61292379  0.1629201   1 NA        NA          NA
-IME_2228 0.9622486  0.33548996  0.3183992   1 NA        NA          NA
-IME_2647 2.7465374  0.40119448  0.1568987   1 NA        NA          NA
-IME_1742 2.2891140 -0.72918881  0.2135651   1 NA        NA          NA
-IME_1437 2.7650584  0.14707977  0.3846643   1 NA        NA          NA
-IME_5369 1.9732055  1.44602158  0.2885581   1 NA        NA          NA
-IME_6881 1.1380615 -0.53831306  0.2144690   1 NA        NA          NA
-IME_6411 2.3868927 -1.72997663  0.1985393   1 NA        NA          NA
-IME_9707        NA          NA -1.3862944 999  0 1.1396254          NA
-IME_2376        NA          NA -1.3862944 999  0 0.9744948          NA
-IME_2405 2.0890176 -0.84808421  0.2151387   1 NA        NA          NA
-IME_3939 0.7372063 -0.68645291  0.2082449   1 NA        NA          NA
-IME_1554 0.5697656  0.60907263  0.2013940   1 NA        NA          NA
-IME_4568 0.9347655 -0.84869736  0.2183235   1 NA        NA          NA
-IME_2727 1.8295097 -0.19659776  0.3133153   1 NA        NA          NA
-IME_4274 2.9088544 -0.25804026  0.1335046   1 NA        NA          NA
-IME_3586 0.9698367  0.53556943  0.1814687   1 NA        NA          NA
-IME_6972        NA          NA -1.3862944 999  0 1.3050320          NA
-IME_9082 1.7185563 -1.46600706  0.2294763   1 NA        NA          NA
-IME_9631 2.3966923  1.76915969  0.3803847   1 NA        NA          NA
-IME_6436        NA          NA -1.3862944 999  0 0.4471942          NA
-IME_5479 1.4248678 -0.82054641  0.2336032   1 NA        NA          NA
-IME_6958 2.4555638 -1.66483343  0.2119760   1 NA        NA          NA
-IME_2786        NA          NA -1.3862944 999  0 4.7048893          NA
-IME_8580 0.7496513  0.42954955  0.2032715   1 NA        NA          NA
-IME_7417 1.1571269  0.23130144  0.2180193   1 NA        NA          NA
-IME_9843 2.8338967  0.32186760  0.1957508   1 NA        NA          NA
-IME_4882 2.0798810  0.14056177  0.2204848   1 NA        NA          NA
-IME_4071 0.8892221 -0.36039370  0.2074151   1 NA        NA          NA
-IME_4005 3.1060655  0.98085403  0.3919410   1 NA        NA          NA
-IME_9948 0.6373342  0.46224786  0.1981338   1 NA        NA          NA
-IME_7131 2.3853427  0.70131979  0.1389165   1 NA        NA          NA
-IME_9079 1.7101879 -0.05770491  0.2079205   1 NA        NA          NA
-IME_8825 0.5083683  0.14206089  0.2069728   1 NA        NA          NA
-IME_5113 2.3637730  0.30071323  0.1474879   1 NA        NA          NA
-IME_5104        NA          NA -1.3862944 999  0 0.8339139          NA
-IME_8184 2.4382324  0.24224010  0.3007124   1 NA        NA          NA
-IME_2565 1.9335282  0.72428094  0.4305994   1 NA        NA          NA
-IME_6445 2.1058162 -1.46247678  0.2142300   1 NA        NA          NA
-IME_3341 1.4054869 -1.82861542  0.1943571   1 NA        NA          NA
-IME_8694 0.7449754  0.05220357  0.2178317   1 NA        NA          NA
-IME_1433 2.2509833 -0.52602212  0.2810847   1 NA        NA          NA
-IME_3127 2.7514633 -1.74378237  0.1892144   1 NA        NA          NA
-IME_8340        NA          NA -1.3862944 999  0 0.2867381          NA
-IME_9914 0.6383839 -1.34545700  0.2026396   1 NA        NA          NA
-IME_6379 1.2750020  0.79465738  0.1697166   1 NA        NA          NA
-IRC_7671 2.4047893          NA         NA  NA NA        NA -0.70375812
-IRC_5373 1.7441956          NA         NA  NA NA        NA  0.48339299
-IRC_6255 1.6951246          NA         NA  NA NA        NA  1.49707385
-IRC_9192 1.6220576          NA         NA  NA NA        NA  0.45851115
-IRC_8276 2.3939590          NA         NA  NA NA        NA  0.62584246
-IRC_7024 1.2065347          NA         NA  NA NA        NA -0.57978427
-IRC_3451 0.5478313          NA         NA  NA NA        NA  0.61901165
-IRC_4181 1.6986794          NA         NA  NA NA        NA -0.34028106
-IRC_7970 1.5781636          NA         NA  NA NA        NA -0.51932453
-IRC_2335 1.5303168          NA         NA  NA NA        NA  0.02249731
+<pre><code>         a1           d          g   u         a           b          b1
+IME_2801  0 -0.08705936 -1.3862944 999        NA          NA          NA
+IME_6196  0  0.01642112 -1.3862944 999        NA          NA          NA
+IME_6042 NA          NA  0.3898351   1 1.8357726  0.14523126          NA
+IME_2416 NA          NA  0.2079892   1 0.8120496 -1.49651644          NA
+IME_5228 NA          NA  0.1629885   1 2.0620730 -0.61656516          NA
+IME_2228 NA          NA  0.3307214   1 1.0015728  0.37528844          NA
+IME_2647 NA          NA  0.1578956   1 2.7695688  0.39887517          NA
+IME_1742 NA          NA  0.2135571   1 2.2818597 -0.73366147          NA
+IME_1437 NA          NA  0.3853206   1 2.7777717  0.14533052          NA
+IME_5369 NA          NA  0.2879306   1 1.9556901  1.44135835          NA
+IME_6881 NA          NA  0.2147772   1 1.1379712 -0.54159154          NA
+IME_6411 NA          NA  0.1985062   1 2.3732613 -1.73875660          NA
+IME_9707  0  1.13962536 -1.3862944 999        NA          NA          NA
+IME_2376  0  0.97449484 -1.3862944 999        NA          NA          NA
+IME_2405 NA          NA  0.2149017   1 2.0836026 -0.85298296          NA
+IME_3939 NA          NA  0.2085620   1 0.7377252 -0.68970300          NA
+IME_1554 NA          NA  0.2020793   1 0.5701733  0.60770786          NA
+IME_4568 NA          NA  0.2181548   1 0.9311491 -0.85582039          NA
+IME_2727 NA          NA  0.3132875   1 1.8368749 -0.19989690          NA
+IME_4274 NA          NA  0.1339297   1 2.9157441 -0.26096813          NA
+IME_3586 NA          NA  0.1821338   1 0.9754538  0.53149218          NA
+IME_6972  0  1.30503201 -1.3862944 999        NA          NA          NA
+IME_9082 NA          NA  0.2303390   1 1.7133289 -1.47104603          NA
+IME_9631 NA          NA  0.3796100   1 2.3348547  1.76824538          NA
+IME_6436  0  0.44719421 -1.3862944 999        NA          NA          NA
+IME_5479 NA          NA  0.2341759   1 1.4364315 -0.81979832          NA
+IME_6958 NA          NA  0.2118136   1 2.4376677 -1.67444632          NA
+IME_2786  0  4.70488926 -1.3862944 999        NA          NA          NA
+IME_8580 NA          NA  0.2034055   1 0.7513352  0.42452925          NA
+IME_7417 NA          NA  0.2207816   1 1.1645419  0.23554247          NA
+IME_9843 NA          NA  0.1957806   1 2.8439186  0.31776445          NA
+IME_4882 NA          NA  0.2224070   1 2.1035557  0.14102115          NA
+IME_4071 NA          NA  0.2075227   1 0.8894519 -0.36440094          NA
+IME_4005 NA          NA  0.3915577   1 3.0773381  0.97462776          NA
+IME_9948 NA          NA  0.1988102   1 0.6395403  0.45938344          NA
+IME_7131 NA          NA  0.1385540   1 2.3811674  0.69651698          NA
+IME_9079 NA          NA  0.2086138   1 1.7165250 -0.05955480          NA
+IME_8825 NA          NA  0.2071364   1 0.5072641  0.13808271          NA
+IME_5113 NA          NA  0.1485939   1 2.3884010  0.29861616          NA
+IME_5104  0  0.83391386 -1.3862944 999        NA          NA          NA
+IME_8184 NA          NA  0.2994895   1 2.4309718  0.23560129          NA
+IME_2565 NA          NA  0.4306009   1 1.9418526  0.71796885          NA
+IME_6445 NA          NA  0.2151753   1 2.0986627 -1.46767576          NA
+IME_3341 NA          NA  0.1946287   1 1.3984150 -1.83770349          NA
+IME_8694 NA          NA  0.2181477   1 0.7442396  0.04888978          NA
+IME_1433 NA          NA  0.2815181   1 2.2634887 -0.52800238          NA
+IME_3127 NA          NA  0.1892625   1 2.7224266 -1.75495224          NA
+IME_8340  0  0.28673814 -1.3862944 999        NA          NA          NA
+IME_9914 NA          NA  0.2028437   1 0.6377181 -1.35076388          NA
+IME_6379 NA          NA  0.1698588   1 1.2760696  0.79061257          NA
+IRC_7671 NA          NA         NA  NA 2.4113922          NA -0.70739252
+IRC_5373 NA          NA         NA  NA 1.7454898          NA  0.47929516
+IRC_6255 NA          NA         NA  NA 1.7045965          NA  1.48764734
+IRC_9192 NA          NA         NA  NA 1.6219625          NA  0.45378621
+IRC_8276 NA          NA         NA  NA 2.3881305          NA  0.62239497
+IRC_7024 NA          NA         NA  NA 1.2046761          NA -0.58510701
+IRC_3451 NA          NA         NA  NA 0.5494679          NA  0.61207839
+IRC_4181 NA          NA         NA  NA 1.6986403          NA -0.34426528
+IRC_7970 NA          NA         NA  NA 1.5780277          NA -0.52398596
+IRC_2335 NA          NA         NA  NA 1.5278446          NA  0.01754887
                   b2        b3
 IME_2801          NA        NA
 IME_6196          NA        NA
@@ -660,18 +662,19 @@ IME_3127          NA        NA
 IME_8340          NA        NA
 IME_9914          NA        NA
 IME_6379          NA        NA
-IRC_7671 -0.34706499 0.5845239
-IRC_5373  0.69803768 1.2668117
-IRC_6255  2.53160280 2.6499906
-IRC_9192  1.26219297 1.3852105
-IRC_8276  1.30739745 1.4129338
-IRC_7024  0.03238581 0.4512792
-IRC_3451  0.83515000 1.3967540
-IRC_4181  0.53866793 1.1585940
-IRC_7970 -0.16099172 0.7015636
-IRC_2335  0.24193926 0.4666589</code></pre>
+IRC_7671 -0.35040889 0.5793667
+IRC_5373  0.69373368 1.2617659
+IRC_6255  2.51955600 2.6379953
+IRC_9192  1.25760566 1.3806360
+IRC_8276  1.30427842 1.4098614
+IRC_7024  0.02752025 0.4467625
+IRC_3451  0.82775236 1.3877769
+IRC_4181  0.53429832 1.1538837
+IRC_7970 -0.16580737 0.6959966
+IRC_2335  0.23707983 0.4619748</code></pre>
 </div>
 </div>
+<p>Dessa vez, note que os parâmetros dos itens excluídos ficaram estranhos. Não sei dizer ao certo o motivo, mas creio que tem relação com a transformação do <code>d</code> em <code>b</code>, pois como <code>a = 0</code> e <code>b = -d/a</code>, então essa transformação não se torna possível.</p>
 <p>Note que o valor de <code>c</code> está negativo, o que não faz sentido. Mas esse valor corresponde ao <code>logit</code> do valor inicial desse parâmetro:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> .<span class="dv">2</span></span>
@@ -699,7 +702,8 @@ IRC_2335  0.24193926 0.4666589</code></pre>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>problemas2 <span class="ot">&lt;-</span> problemas2[<span class="sc">!</span><span class="fu">is.na</span>(problemas2)]</span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>problemas2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "IME_9707" "IME_2376" "IME_6972" "IME_6436" "IME_2786" "IME_5104" "IME_8340"</code></pre>
+<pre><code>[1] "IME_2801" "IME_6196" "IME_9707" "IME_2376" "IME_6972" "IME_6436" "IME_2786"
+[8] "IME_5104" "IME_8340"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="sc">!</span>problemas2 <span class="sc">%in%</span> <span class="fu">rownames</span>(pars2)[<span class="fu">is.na</span>(pars2<span class="sc">$</span>a)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -719,11 +723,13 @@ será feita análise de DIF.</code></pre>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ajuste<span class="sc">$</span>rmsd.pisa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               P.0       P.1 P.2 P.3 P.4
-IME_9707 0.1101192 0.1101192  NA  NA  NA
-IME_2376 0.1203393 0.1203393  NA  NA  NA
-IME_6436 0.1557912 0.1557912  NA  NA  NA
-IME_5104 0.1147956 0.1147956  NA  NA  NA
-IME_8340 0.1169657 0.1169657  NA  NA  NA</code></pre>
+IME_2801 0.1616361 0.1616361  NA  NA  NA
+IME_6196 0.2199704 0.2199704  NA  NA  NA
+IME_9707 0.1101306 0.1101306  NA  NA  NA
+IME_2376 0.1197879 0.1197879  NA  NA  NA
+IME_6436 0.1558520 0.1558520  NA  NA  NA
+IME_5104 0.1142943 0.1142943  NA  NA  NA
+IME_8340 0.1169120 0.1169120  NA  NA  NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="sc">!</span><span class="fu">rownames</span>(ajuste<span class="sc">$</span>rmsd.pisa) <span class="sc">%in%</span> <span class="fu">rownames</span>(pars2)[<span class="fu">is.na</span>(pars2<span class="sc">$</span>a)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -798,10 +804,289 @@ IME_8340 0.1169657 0.1169657  NA  NA  NA</code></pre>
 </div>
 </div>
 </div>
-
-
 </section>
 </section>
+</section>
+<section id="calibração-sem-priori" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="calibração-sem-priori"><span class="header-section-number">4.3</span> Calibração sem priori</h2>
+<p>A título de curiosidade, vamos ver o que acontece se não utilizarmos priori para a calibração. Primeiro, vamos deixar só a priori do <code>c</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>tab.pars <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> <span class="st">'values'</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'value'</span>] <span class="ot">&lt;-</span> .<span class="dv">2</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior_1'</span>] <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior_2'</span>] <span class="ot">&lt;-</span> <span class="dv">17</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'prior.type'</span>] <span class="ot">&lt;-</span> <span class="st">'expbeta'</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'lbound'</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>tab.pars[tab.pars<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'g'</span>, <span class="st">'ubound'</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>fit3 <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>, <span class="at">pars =</span> tab.pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Veja o que acontece com os dois primeiros itens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>pars3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">coef</span>(fit3, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>pars3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  a             b         g  u           b1         b2
+IME_2801 -0.6408626 -0.8388442039 0.1588435  1           NA         NA
+IME_6196 -1.1146907 -0.3569174954 0.1300366  1           NA         NA
+IME_6042  1.8475136  0.1277865327 0.3910306  1           NA         NA
+IME_2416  0.8063741 -1.5246831366 0.2062605  1           NA         NA
+IME_5228  2.0777202 -0.6331757348 0.1631316  1           NA         NA
+IME_2228  0.8983844  0.2163558815 0.2928282  1           NA         NA
+IME_2647  2.7641713  0.3771145739 0.1571023  1           NA         NA
+IME_1742  2.3150896 -0.7459356425 0.2146106  1           NA         NA
+IME_1437  2.8089303  0.1265081662 0.3865210  1           NA         NA
+IME_5369  1.9839058  1.4299211191 0.2898516  1           NA         NA
+IME_6881  1.1397135 -0.5656044701 0.2122853  1           NA         NA
+IME_6411  2.4496100 -1.7239918752 0.1995885  1           NA         NA
+IME_9707  0.4221602 -1.5537953822 0.2023962  1           NA         NA
+IME_2376  0.4753440 -1.0647935801 0.2005422  1           NA         NA
+IME_2405  2.1164563 -0.8586506856 0.2190977  1           NA         NA
+IME_3939  0.7254944 -0.7248737531 0.2060476  1           NA         NA
+IME_1554  0.5447535  0.5718762992 0.1950337  1           NA         NA
+IME_4568  0.9306295 -0.8759284299 0.2172169  1           NA         NA
+IME_2727  1.8665601 -0.2043827480 0.3192310  1           NA         NA
+IME_4274  2.9551941 -0.2794713404 0.1335132  1           NA         NA
+IME_3586  0.9589351  0.5069251151 0.1791272  1           NA         NA
+IME_6972  0.3280037 -2.4532505858 0.2003580  1           NA         NA
+IME_9082  1.7456857 -1.4745182053 0.2278394  1           NA         NA
+IME_9631  2.4636808  1.7495994171 0.3818041  1           NA         NA
+IME_6436  1.9325586  0.9200176179 0.4562214  1           NA         NA
+IME_5479  1.4322387 -0.8361023509 0.2353822  1           NA         NA
+IME_6958  2.5268023 -1.6593942200 0.2128165  1           NA         NA
+IME_2786  1.9737234 -3.1936584472 0.2010217  1           NA         NA
+IME_8580  0.7260021  0.3825100353 0.1958331  1           NA         NA
+IME_7417  1.1471126  0.1977736030 0.2146286  1           NA         NA
+IME_9843  2.8830161  0.2993285927 0.1969959  1           NA         NA
+IME_4882  2.0784952  0.1113358172 0.2183477  1           NA         NA
+IME_4071  0.8798210 -0.4001823720 0.2029145  1           NA         NA
+IME_4005  3.1889318  0.9660624883 0.3947791  1           NA         NA
+IME_9948  0.6183960  0.4183624567 0.1919715  1           NA         NA
+IME_7131  2.3989334  0.6795546466 0.1398816  1           NA         NA
+IME_9079  1.7085942 -0.0872743266 0.2053752  1           NA         NA
+IME_8825  0.4825136  0.0793572405 0.1991370  1           NA         NA
+IME_5113  2.3721390  0.2768679014 0.1476603  1           NA         NA
+IME_5104  0.3907670 -0.9111507588 0.2004592  1           NA         NA
+IME_8184  2.4905185  0.2256653094 0.3043280  1           NA         NA
+IME_2565  1.9070774  0.6999752375 0.4299898  1           NA         NA
+IME_6445  2.1489136 -1.4689323012 0.2124560  1           NA         NA
+IME_3341  1.4260999 -1.8309078907 0.1934728  1           NA         NA
+IME_8694  0.7260224  0.0007032249 0.2107911  1           NA         NA
+IME_1433  2.2587553 -0.5509290404 0.2790076  1           NA         NA
+IME_3127  2.8380145 -1.7334355834 0.1921525  1           NA         NA
+IME_8340  0.3578544  0.5487789352 0.1993967  1           NA         NA
+IME_9914  0.6260080 -1.3994862666 0.1996314  1           NA         NA
+IME_6379  1.2649534  0.7715822711 0.1688871  1           NA         NA
+IRC_7671  2.4153373            NA        NA NA -0.721772415 -0.3675070
+IRC_5373  1.7466297            NA        NA NA  0.460697061  0.6754419
+IRC_6255  1.7001540            NA        NA NA  1.472449894  2.5083262
+IRC_9192  1.6201692            NA        NA NA  0.433882596  1.2420630
+IRC_8276  2.3891628            NA        NA NA  0.602171070  1.2874071
+IRC_7024  1.2043347            NA        NA NA -0.598125250  0.0131247
+IRC_3451  0.5361498            NA        NA NA  0.613376690  0.8338027
+IRC_4181  1.7051349            NA        NA NA -0.360659664  0.5161568
+IRC_7970  1.5827442            NA        NA NA -0.537591102 -0.1805604
+IRC_2335  1.5342853            NA        NA NA  0.002338742  0.2216203
+                b3
+IME_2801        NA
+IME_6196        NA
+IME_6042        NA
+IME_2416        NA
+IME_5228        NA
+IME_2228        NA
+IME_2647        NA
+IME_1742        NA
+IME_1437        NA
+IME_5369        NA
+IME_6881        NA
+IME_6411        NA
+IME_9707        NA
+IME_2376        NA
+IME_2405        NA
+IME_3939        NA
+IME_1554        NA
+IME_4568        NA
+IME_2727        NA
+IME_4274        NA
+IME_3586        NA
+IME_6972        NA
+IME_9082        NA
+IME_9631        NA
+IME_6436        NA
+IME_5479        NA
+IME_6958        NA
+IME_2786        NA
+IME_8580        NA
+IME_7417        NA
+IME_9843        NA
+IME_4882        NA
+IME_4071        NA
+IME_4005        NA
+IME_9948        NA
+IME_7131        NA
+IME_9079        NA
+IME_8825        NA
+IME_5113        NA
+IME_5104        NA
+IME_8184        NA
+IME_2565        NA
+IME_6445        NA
+IME_3341        NA
+IME_8694        NA
+IME_1433        NA
+IME_3127        NA
+IME_8340        NA
+IME_9914        NA
+IME_6379        NA
+IRC_7671 0.5614592
+IRC_5373 1.2448762
+IRC_6255 2.6271082
+IRC_9192 1.3656294
+IRC_8276 1.3935231
+IRC_7024 0.4316637
+IRC_3451 1.4065592
+IRC_4181 1.1375633
+IRC_7970 0.6793831
+IRC_2335 0.4457731</code></pre>
+</div>
+</div>
+<p>Agora vamos calibrar sem priori estabelecida para os parâmetros <code>a</code> e <code>c</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>fit4 <span class="ot">&lt;-</span> <span class="fu">mirt</span>(<span class="at">data =</span> banco.misto, <span class="at">model =</span> <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'3PL'</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">'graded'</span>, <span class="dv">10</span>)), <span class="at">TOL =</span> <span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Veja novamente os dois primeiros itens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pars4 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">coef</span>(fit4, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>pars4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  a            b           g  u          b1         b2
+IME_2801 -0.5331576 -0.182968186 0.006395557  1          NA         NA
+IME_6196 -0.9571352 -0.007539307 0.003191954  1          NA         NA
+IME_6042  2.2195405  0.319012980 0.450290563  1          NA         NA
+IME_2416  1.0730130 -0.475090912 0.487166479  1          NA         NA
+IME_5228  1.9041043 -0.719967234 0.077378410  1          NA         NA
+IME_2228  1.4935803  0.792990647 0.449572284  1          NA         NA
+IME_2647  2.7323698  0.401010028 0.146423755  1          NA         NA
+IME_1742  2.4116669 -0.650722627 0.248613218  1          NA         NA
+IME_1437  3.0541957  0.218525803 0.414495801  1          NA         NA
+IME_5369  2.1488493  1.461953960 0.299066102  1          NA         NA
+IME_6881  1.2800576 -0.287370887 0.300043460  1          NA         NA
+IME_6411  2.4263096 -1.671951835 0.236915403  1          NA         NA
+IME_9707  0.7391497  0.669173235 0.540093514  1          NA         NA
+IME_2376  0.4873612 -0.890117852 0.225574927  1          NA         NA
+IME_2405  2.2085715 -0.750056152 0.261770560  1          NA         NA
+IME_3939  0.8260024 -0.270377516 0.314134441  1          NA         NA
+IME_1554  0.4686356  0.068209074 0.084303655  1          NA         NA
+IME_4568  1.2892304 -0.093893181 0.442538259  1          NA         NA
+IME_2727  2.1679784 -0.012255491 0.386485915  1          NA         NA
+IME_4274  2.7202535 -0.304457369 0.079670950  1          NA         NA
+IME_3586  0.8727837  0.388056640 0.126035515  1          NA         NA
+IME_6972  0.3203723 -2.687980102 0.161747936  1          NA         NA
+IME_9082  2.3885173 -0.842752664 0.527282156  1          NA         NA
+IME_9631  2.9155036  1.766887769 0.392808163  1          NA         NA
+IME_6436  2.4013029  1.035292112 0.488974911  1          NA         NA
+IME_5479  1.6642321 -0.517409963 0.356867083  1          NA         NA
+IME_6958  2.9777337 -1.340503045 0.433984225  1          NA         NA
+IME_2786  2.0073830 -3.006325981 0.390986978  1          NA         NA
+IME_8580  0.7120101  0.366621132 0.181488046  1          NA         NA
+IME_7417  1.2398058  0.330866758 0.248716216  1          NA         NA
+IME_9843  2.9315269  0.339801138 0.197295813  1          NA         NA
+IME_4882  2.1653166  0.176542789 0.230809637  1          NA         NA
+IME_4071  0.9235171 -0.243848176 0.238477081  1          NA         NA
+IME_4005  3.5061764  1.019526368 0.407743556  1          NA         NA
+IME_9948  0.5536701  0.115943224 0.113342447  1          NA         NA
+IME_7131  2.2874613  0.685605473 0.120973689  1          NA         NA
+IME_9079  1.7544887 -0.022529312 0.216071343  1          NA         NA
+IME_8825  0.4603158 -0.075650450 0.163507929  1          NA         NA
+IME_5113  2.2573577  0.277617431 0.122695990  1          NA         NA
+IME_5104  0.3933913 -0.805005444 0.211241336  1          NA         NA
+IME_8184  2.6938399  0.307882717 0.327063119  1          NA         NA
+IME_2565  2.2660562  0.821629003 0.464290592  1          NA         NA
+IME_6445  2.3894174 -1.204833820 0.371973927  1          NA         NA
+IME_3341  1.3457450 -2.027458304 0.046255879  1          NA         NA
+IME_8694  0.9022409  0.472866714 0.323063689  1          NA         NA
+IME_1433  2.5030302 -0.396103913 0.342511604  1          NA         NA
+IME_3127  2.6169310 -1.841629979 0.066980242  1          NA         NA
+IME_8340  0.3279778  0.107793760 0.132941903  1          NA         NA
+IME_9914  0.6075145 -1.537572716 0.153971694  1          NA         NA
+IME_6379  1.1830472  0.736457023 0.138833918  1          NA         NA
+IRC_7671  2.4227138           NA          NA NA -0.68171613 -0.3268769
+IRC_5373  1.7597754           NA          NA NA  0.49720276  0.7101927
+IRC_6255  1.7198517           NA          NA NA  1.49775947  2.5192684
+IRC_9192  1.6349760           NA          NA NA  0.47252598  1.2695620
+IRC_8276  2.4244920           NA          NA NA  0.63847257  1.3119611
+IRC_7024  1.2055473           NA          NA NA -0.56260340  0.0492829
+IRC_3451  0.5358029           NA          NA NA  0.64687108  0.8677217
+IRC_4181  1.7128128           NA          NA NA -0.32030857  0.5518951
+IRC_7970  1.5879000           NA          NA NA -0.49962012 -0.1430212
+IRC_2335  1.5424783           NA          NA NA  0.03942306  0.2575174
+                b3
+IME_2801        NA
+IME_6196        NA
+IME_6042        NA
+IME_2416        NA
+IME_5228        NA
+IME_2228        NA
+IME_2647        NA
+IME_1742        NA
+IME_1437        NA
+IME_5369        NA
+IME_6881        NA
+IME_6411        NA
+IME_9707        NA
+IME_2376        NA
+IME_2405        NA
+IME_3939        NA
+IME_1554        NA
+IME_4568        NA
+IME_2727        NA
+IME_4274        NA
+IME_3586        NA
+IME_6972        NA
+IME_9082        NA
+IME_9631        NA
+IME_6436        NA
+IME_5479        NA
+IME_6958        NA
+IME_2786        NA
+IME_8580        NA
+IME_7417        NA
+IME_9843        NA
+IME_4882        NA
+IME_4071        NA
+IME_4005        NA
+IME_9948        NA
+IME_7131        NA
+IME_9079        NA
+IME_8825        NA
+IME_5113        NA
+IME_5104        NA
+IME_8184        NA
+IME_2565        NA
+IME_6445        NA
+IME_3341        NA
+IME_8694        NA
+IME_1433        NA
+IME_3127        NA
+IME_8340        NA
+IME_9914        NA
+IME_6379        NA
+IRC_7671 0.5974229
+IRC_5373 1.2734340
+IRC_6255 2.6363001
+IRC_9192 1.3914577
+IRC_8276 1.4162006
+IRC_7024 0.4674857
+IRC_3451 1.4404116
+IRC_4181 1.1665017
+IRC_7970 0.7135549
+IRC_2335 0.4803832</code></pre>
+</div>
+</div>
+<p>Para discussão: qual o impacto de usarmos priori na calibração?</p>
+
+
 </section>
 
 </main> <!-- /main -->
