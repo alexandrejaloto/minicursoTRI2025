@@ -11,6 +11,7 @@ book:
     - analise_graded.qmd
     - analise_misto.qmd
     - fipc.qmd
+    - exercicio.qmd
 
 format:
   html:
