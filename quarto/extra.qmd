@@ -1,0 +1,135 @@
+# Material extra
+
+## Cálculo do intercepto no modelo 3PL
+
+```{r}
+
+library(ggplot2)
+
+# Parâmetros
+a <- 1.5
+b <- 1
+c <- 0.2
+
+# Eixo de proficiência
+theta <- seq(-4, 4, length.out = 401)
+
+# Função logística
+logistic <- function(z) 1 / (1 + exp(-z))
+logistic <- function(z) exp(z) / (1 + exp(z))
+
+# Linearização (logit)
+logit <- function(x) log(x / (1 - x))
+
+
+# Cálculos
+z <- a * (theta - b)
+p_star <- logistic(z)             # p*(θ)
+p <- c + (1 - c) * p_star         # p(θ)
+logit_p_star <- logit(p_star)
+logit_p <- logit(p)
+
+# ----------- 1. Curvas de probabilidade -----------
+df_prob <- data.frame(theta, p, p_star)
+ggplot(df_prob, aes(x = theta)) +
+  geom_line(aes(y = p, color = "p(θ) — 3PL (com c)"), size = 1) +
+  geom_line(aes(y = p_star, color = "p*(θ) = (p-c)/(1-c) — logística pura"), linetype = "dashed", size = 1) +
+  scale_color_manual(values = c("p(θ) — 3PL (com c)" = "blue",
+                                "p*(θ) = (p-c)/(1-c) — logística pura" = "red")) +
+  labs(y = "Probabilidade", color = "",
+       title = "Curvas de Probabilidade: p(θ) e p*(θ)") +
+  theme_minimal(base_size = 14)
+
+# ----------- 2. Curvas do logit -----------
+df_logit <- data.frame(theta, logit_p, logit_p_star)
+ggplot(df_logit, aes(x = theta)) +
+  geom_line(aes(y = logit_p, color = "logit(p(θ)) — direto no 3PL"), size = 1) +
+  geom_line(aes(y = logit_p_star, color = "logit(p*(θ)) — linear: aθ - ab"), linetype = "dashed", size = 1) +
+  scale_color_manual(values = c("logit(p(θ)) — direto no 3PL" = "blue",
+                                "logit(p*(θ)) — linear: aθ - ab" = "red")) +
+  labs(y = "Logit (log-odds)", color = "",
+       title = "Logits: logit(p) vs logit(p*)") +
+  theme_minimal(base_size = 14)
+
+# ----------- 3. Checando a linearidade de logit(p*) -----------
+modelo <- lm(logit_p_star ~ theta)
+summary(modelo)
+
+cat("\nCoeficiente angular esperado (a):", a)
+cat("\nIntercepto esperado (-a*b):", -a*b, "\n")
+
+```
+
+## Gráfico com os valores esperados
+
+```{r}
+library(mirt)
+data(banco.2pl, package = 'minicursoTRI2025')
+calib <- mirt(data = banco2pl.t1, model = 1, itemtype = '2PL', TOL = .001)
+
+expected <- function(calib, flag = 0, probfun = TRUE,
+                     dentype = "norm", Theta = matrix(seq(-6, 6, length.out = 61)))
+{
+  dat <- mirt::extract.mirt(calib, "data")
+  ret <- data.frame()
+  nfact <- mirt::extract.mirt(calib, "nfact")
+  stopifnot(nfact == 1L)
+  sv <- mirt::mod2values(calib)
+  sv$est <- FALSE
+  mod_g <- mirt::mirt(dat, nfact, itemtype = mirt::extract.mirt(calib, "itemtype"), pars = sv, technical = list(storeEtable = TRUE, customTheta = Theta, customK = mirt::extract.mirt(calib, "K")))
+  Etable <- mod_g@Internals$Etable[[1]]$r1
+  
+  
+  if (dentype %in% c("norm", "snorm")) {
+    mu <- sv$value[sv$name == "MEAN_1"]
+    sigma2 <- sv$value[sv$name == "COV_11"]
+    if (dentype == "snorm") {
+      mu <- 0
+      sigma2 <- 1
+    }
+    f_theta <- dnorm(Theta, mean = mu, sd = sqrt(sigma2))
+    f_theta <- as.vector(f_theta/sum(f_theta))
+  } else if (dentype == "empirical") {
+    f_theta <- rowSums(Etable)/sum(Etable)
+  } else stop("dentype not supported", call. = FALSE)
+  itemloc <- mirt::extract.mirt(mod_g, "itemloc")
+  which.items <- 1L:ncol(dat)
+  ret2 <- vector("list", ncol(dat))
+  names(ret2) <- mirt::extract.mirt(mod_g, "itemnames")
+  P_o <- data.frame(NA)
+  for (i in seq_len(length(which.items))) {
+    pick <- itemloc[which.items[i]]:(itemloc[which.items[i] + 
+                                               1L] - 1L)
+    O <- Etable[, pick]
+    P_o_prov <- O/rowSums(O)
+    P_o <- cbind(P_o, P_o_prov[,2])
+  }
+  P_o <- P_o[,-1]
+  return(P_o)
+}
+
+
+Theta = seq(-6, 6, length.out = 61)
+observado <- expected(calib, Theta = matrix(Theta))
+
+theta <- seq(-6, 6, length.out = 1000)
+
+p <- mirt::probtrace(calib, theta)
+
+plotar_esperado <- function(i)
+{
+  df_plot <- data.frame(theta, p[,i*2])
+  names(df_plot) <- c('theta', 'p')
+  
+  ggplot(df_plot, aes(x = theta, y = p)) +
+    geom_line() + 
+    geom_point(data = observado,
+               aes(y = observado[,i], x = Theta))
+}
+
+plotar_esperado(1)
+plotar_esperado(15)
+plotar_esperado(30)
+```
+
+

@@ -1,7 +1,7 @@
 # Exercício
 
 1.	Demonstre a probabilidade de acerto em função do parâmetro "c" quando um sujeito tem a proficiência igual à dificuldade de um item.
-2.	Por que a equação da probabilidade de acerto na TRI em um modelo de três parâmetros para itens dicotômicos pode ser generalizada para os modelos de um e de dois parâmetros?
+2.	Por que a equação da probabilidade de acerto na TRI em um modelo de três parâmetros para itens dicotômicos pode ser restringida para os modelos de um e de dois parâmetros?
 3.	Demonstre por que no modelo de dois parâmetros da TRI o intercepto equivale a -a*b.
 4.	Gere respostas simuladas para um teste de 30 itens. Adote o seguinte procedimento:
   - Fixe a semente 1234
@@ -16,3 +16,4 @@ b)	Estime as proficiências dos sujeitos com o método EAP.
 c)	Com base nos parâmetros estimados, gere dois padrões de resposta diferentes de forma que o sujeito A acerte os 15 itens mais fáceis e o sujeito B acerte os 15 itens mais difíceis. Em seguida, estime a proficiência dos dois sujeitos e explique o motivo da diferença, ressaltando por que é esperado que uma delas especificamente seja maior.
 d)	A diferença observada entre os sujeitos A e B seria esperada caso o modelo adotado fosse o de um parâmetro? Justifique.
 
+5. Faça a análise pela TRI usando o "Banco simulado simples" do livro disponível em https://alexandrejaloto.github.io/treinamentocomp/. Adote o protocolo de análise descrito no livro e cole as capturas de tela com os resultados das comparações usando `INEPsico::compara.sim.tct`, `INEPsico::compara.sim.tri.v0` e `INEPsico::compara.sim.tri.v1`.

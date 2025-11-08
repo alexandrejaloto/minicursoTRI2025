@@ -109,7 +109,7 @@ Conclusão: o Item_4 deve ser excluído.
 
 ### Calibração final
 
-Calirbar sem o Item_4
+Calibrar sem o Item_4
 
 ```{r}
 fit.graded <- mirt(data = banco.poli[,-4], model = 1, itemtype = 'graded')

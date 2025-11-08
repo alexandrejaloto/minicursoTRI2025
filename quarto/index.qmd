@@ -10,7 +10,7 @@ library(mirt)
 
 ```{r, eval=FALSE}
 # caso ainda não tenha instalado o pacote do minicurso
-devtools::install_github('alexandrejaloto/minicursoTRI2025)
+devtools::install_github('alexandrejaloto/minicursoTRI2025')
 
 # após instalar o pacote do minicurso
 library(minicursoTRI2025)

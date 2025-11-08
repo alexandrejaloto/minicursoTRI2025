@@ -12,6 +12,7 @@ book:
     - analise_misto.qmd
     - fipc.qmd
     - exercicio.qmd
+    - extra.qmd
 
 format:
   html:
