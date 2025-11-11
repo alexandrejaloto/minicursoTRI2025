@@ -1,14 +1,17 @@
 # Material extra
 
+```{r, echo=FALSE, include=FALSE}
+library(mirt)
+devtools::load_all()
+library(ggplot2)
+```
+
 ## Cálculo do intercepto no modelo 3PL
 
 ```{r}
-
-library(ggplot2)
-
 # Parâmetros
 a <- 1.5
-b <- 1
+b <- 2
 c <- 0.2
 
 # Eixo de proficiência
@@ -64,6 +67,7 @@ cat("\nIntercepto esperado (-a*b):", -a*b, "\n")
 
 ```{r}
 library(mirt)
+
 data(banco.2pl, package = 'minicursoTRI2025')
 calib <- mirt(data = banco2pl.t1, model = 1, itemtype = '2PL', TOL = .001)
 

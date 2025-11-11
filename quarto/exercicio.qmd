@@ -3,7 +3,9 @@
 1.	Demonstre a probabilidade de acerto em função do parâmetro "c" quando um sujeito tem a proficiência igual à dificuldade de um item.
 2.	Por que a equação da probabilidade de acerto na TRI em um modelo de três parâmetros para itens dicotômicos pode ser restringida para os modelos de um e de dois parâmetros?
 3.	Demonstre por que no modelo de dois parâmetros da TRI o intercepto equivale a -a*b.
-4.	Gere respostas simuladas para um teste de 30 itens. Adote o seguinte procedimento:
+4. Explique como funciona uma simulação do tipo Monte Carlo em uma situação em que se deseja gerar respostas de um grupo de sujeitos de proficiência conhecida a um instrumento itens de parâmetros conhecidos.
+5. Escreva a sintaxe para simular manualmente a resposta de um sujeito de proficiência 1,5 a um item com os seguintes parâmetros: a=1,1; b=0,7; c=0,3.
+6.	Gere respostas simuladas para um teste de 30 itens. Adote o seguinte procedimento:
   - Fixe a semente 1234
   - Gere o parâmetro “a” com distribuição uniforme entre 1.0 e 2.0
   - Gere o parâmetro “b” com distribuição normal de média 0 e desvio 1
@@ -16,4 +18,6 @@ b)	Estime as proficiências dos sujeitos com o método EAP.
 c)	Com base nos parâmetros estimados, gere dois padrões de resposta diferentes de forma que o sujeito A acerte os 15 itens mais fáceis e o sujeito B acerte os 15 itens mais difíceis. Em seguida, estime a proficiência dos dois sujeitos e explique o motivo da diferença, ressaltando por que é esperado que uma delas especificamente seja maior.
 d)	A diferença observada entre os sujeitos A e B seria esperada caso o modelo adotado fosse o de um parâmetro? Justifique.
 
-5. Faça a análise pela TRI usando o "Banco simulado simples" do livro disponível em https://alexandrejaloto.github.io/treinamentocomp/. Adote o protocolo de análise descrito no livro e cole as capturas de tela com os resultados das comparações usando `INEPsico::compara.sim.tct`, `INEPsico::compara.sim.tri.v0` e `INEPsico::compara.sim.tri.v1`.
+7. Faça a análise pela TRI usando o "Banco simulado simples" do livro disponível em https://alexandrejaloto.github.io/treinamentocomp/. Adote o protocolo de análise descrito no livro e cole as capturas de tela com os resultados das comparações usando `INEPsico::compara.sim.tct`, `INEPsico::compara.sim.tri.v0` e `INEPsico::compara.sim.tri.v1`.
+
+
