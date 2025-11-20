@@ -20,4 +20,6 @@ d)	A diferença observada entre os sujeitos A e B seria esperada caso o modelo a
 
 7. Faça a análise pela TRI usando o "Banco simulado simples" do livro disponível em https://alexandrejaloto.github.io/treinamentocomp/. Adote o protocolo de análise descrito no livro e cole as capturas de tela com os resultados das comparações usando `INEPsico::compara.sim.tct`, `INEPsico::compara.sim.tri.v0` e `INEPsico::compara.sim.tri.v1`.
 
+8. Qual a diferença entre a TCT e os modelos de TRI (e.g., Rasch, 2PL, 3PL)?
 
+9. Cite uma consequência caso as categorias dos itens politômicos modelados no modelo de Samejima (resposta gradual) tivessem parâmetros de discriminação diferentes.
